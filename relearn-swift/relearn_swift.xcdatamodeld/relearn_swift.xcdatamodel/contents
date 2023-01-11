@@ -1,20 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Faction" representedClassName="Faction" syncable="YES" codeGenerationType="class">
+        <attribute name="enabled" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="info" optional="YES" attributeType="String"/>
         <attribute name="name_" optional="YES" attributeType="String"/>
         <relationship name="gameSet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GameSet" inverseName="factions" inverseEntity="GameSet"/>
+        <relationship name="mechanics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Mechanic" inverseName="factions" inverseEntity="Mechanic"/>
+        <relationship name="modifiedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Modifier" inverseName="targets" inverseEntity="Modifier"/>
     </entity>
     <entity name="GameSet" representedClassName="GameSet" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="enabled" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
         <attribute name="info" optional="YES" attributeType="String"/>
         <attribute name="link" optional="YES" attributeType="String"/>
         <attribute name="name_" optional="YES" attributeType="String"/>
         <relationship name="factions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Faction" inverseName="gameSet" inverseEntity="Faction"/>
+        <relationship name="modifiers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Modifier" inverseName="set" inverseEntity="Modifier"/>
+    </entity>
+    <entity name="Mechanic" representedClassName="Mechanic" syncable="YES" codeGenerationType="class">
+        <attribute name="enabled" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="name_" optional="YES" attributeType="String"/>
+        <relationship name="factions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Faction" inverseName="mechanics" inverseEntity="Faction"/>
+        <relationship name="modifiers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Modifier" inverseName="mechanic" inverseEntity="Modifier"/>
+    </entity>
+    <entity name="Modifier" representedClassName="Modifier" syncable="YES" codeGenerationType="class">
+        <relationship name="mechanic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mechanic" inverseName="modifiers" inverseEntity="Mechanic"/>
+        <relationship name="set" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GameSet" inverseName="modifiers" inverseEntity="GameSet"/>
+        <relationship name="targets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Faction" inverseName="modifiedBy" inverseEntity="Faction"/>
     </entity>
     <elements>
-        <element name="GameSet" positionX="-63" positionY="-9" width="128" height="104"/>
-        <element name="Faction" positionX="-54" positionY="27" width="128" height="89"/>
+        <element name="GameSet" positionX="-63" positionY="-9" width="128" height="134"/>
+        <element name="Faction" positionX="-54" positionY="27" width="128" height="134"/>
+        <element name="Modifier" positionX="-27" positionY="81" width="128" height="74"/>
+        <element name="Mechanic" positionX="-9" positionY="99" width="128" height="89"/>
     </elements>
 </model>

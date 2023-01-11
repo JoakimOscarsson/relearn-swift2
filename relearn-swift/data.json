@@ -62,7 +62,7 @@
     "bases": "",
     "factions": [
         {
-            "name": "Bear Cavalery",
+            "name": "Bear Cavalry",
             "image": "Bear_Cavalry",
             "description": "Move other players' minions away from bases where you have minions, and destroy moving minions.",
             "erratas": []
@@ -608,7 +608,7 @@
             "name": "Penguins",
             "image": "Penguins_logo_2",
             "description": "Play random extra minions directly out of your deck and trigger abilities each time you play a minion that way.",
-            "mechanics": ["Titans"],
+            "mechanics": ["Titans", "Power-Counters"],
             "erratas": []
         } 
     ]
@@ -623,7 +623,7 @@
             "name": "Penguins",
             "image": "Penguins_logo_2",
             "description": "Play random extra minions directly out of your deck and trigger abilities each time you play a minion that way.",
-            "mechanics": ["Titans"],
+            "mechanics": ["Titans", "Power-Counters"],
             "erratas": []
         } 
     ]
@@ -642,7 +642,7 @@
             "Minions of Cthulhu",
             "Innsmouth",
             "Giant Ants",
-            "Warewolves",
+            "Werewolves",
             "Bear Cavalry",
             "Changerbots",
             "Super Spies",
@@ -873,7 +873,7 @@
             "Killer Plants",
             "Cowboys",
             "Kung Fu Fighters",
-            "Ancient Egyptains",
+            "Ancient Egyptians",
             "Mad Scientists",
             "Superheroes"]
         },

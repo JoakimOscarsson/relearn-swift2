@@ -86,34 +86,47 @@ struct PersistenceController {
         //Remove all 'Item's and GameSets:
         for entity in (try? context.fetch(GameSet.fetchRequest())) ?? [] {context.delete(entity)}
         for entity in (try? context.fetch(Faction.fetchRequest())) ?? [] {context.delete(entity)}
+        for entity in (try? context.fetch(Mechanic.fetchRequest())) ?? [] {context.delete(entity)}
+        for entity in (try? context.fetch(Modifier.fetchRequest())) ?? [] {context.delete(entity)}
         try? context.save()
         
         
+        //TODO: Make separate function for populating Mechanics
+        let mechanicNames = ["Power-Counters", "Monsters", "Treasures", "Madness", "Dueling", "Burying", "Titans"]
+        for name in mechanicNames {
+            let m = Mechanic(context: context)
+            m.name_ = name
+            m.enabled = true
+        }
+        
         //TODO: Make a separate function for populating the data
-        //Load data from file
+        //Load data from file, Parse Json and create sets (and included factions)
         if let data = readLocalFile(fromFile: "data.json") {
             let codable_sets = ParseJson(fromJson: data)
             codable_sets?.forEach() { cs in
-                let set = GameSet(in: context, from: cs)
+                let _ = GameSet(in: context, from: cs)
             }
         }
-        
-        //Parse json
-//        if let codable_sets = ParseJson(fromJson: data) {
-//
-//        }
-        
-        //Step through json and create NSObj sets
 
-        //Recursively create factions from the set-creation function.
         
-        
-//        //Manually add 3 sets
-//        let names = ["Aliens", "Pirates", "Zombies", "etc"]
-//        names.forEach { name in
-//            let set = GameSet(context: context)
-//            set.name_ = name
+//        //Do a demo and disable singel faction: Check!!.
+//        if let faction = try? context.fetch(Faction.fetchRequest()).first {
+//            print("Disabled faction is: \(faction.name)")
+//            faction.enabled = false
 //        }
+        
+//        //Do a demo and disable a set: Check!!.
+//        if let gameSet = try? context.fetch(GameSet.fetchRequest()).first {
+//            print("Disabled set is: \(gameSet.name)")
+//            gameSet.enabled = false
+//        }
+        
+//        //Do a demo and disable a mechanic: Check!!
+//        if let mechanic = try? context.fetch(Mechanic.fetchRequest()).first {
+//            print("Disabled mechanic is: \(mechanic.name_ ?? "Error: Mechanic is missing!")")
+//            mechanic.enabled = false
+//        }
+        
         
         try? context.save()
         
