@@ -9,117 +9,29 @@ import CoreData
 import SwiftUI
 
 
-struct codableSet: Codable {
-    let name: String
-    let description: String
-    let date: String
-    let bases: String?
-    let factions: [codableFaction]?
-    let modifiers: [codableModifierSpec]?
-}
 
-struct codableFaction: Codable {
-    let name: String
-    let image: String
-    let description: String?
-    let overview: String?
-    let bases: String?
-    let mechanics: [String]?
-    let erratas: [codableErrata]?
-    let clarifications: [codableClarification]?
-    let faq: [codableFaq]?
-}
-
-struct codableModifierSpec: Codable {
-    let modifier: String
-    let modifies: [String]
-}
-
-struct codableErrata: Codable {
-    let cardname: String
-    let errata: String
-}
-
-struct codableFaq: Codable {
-    let cardname: String
-    let question: String
-    let answer: String
-}
-
-struct codableClarification: Codable {
-    let cardname: String
-    let clarification: String
-}
-
-
-func readLocalFile(fromFile f: String) -> Data?{
-    let file = f.split(separator: ".")
-    if let filePath = Bundle.main.path(forResource: String(file[0]), ofType: String(file[1])) {
-        let fileUrl = URL(fileURLWithPath: filePath)
-        let data = try? Data(contentsOf: fileUrl)
-        return data
-    }
-    return nil
-}
-
-func ParseJson(fromJson json: Data) -> [codableSet]? {
-    do {
-        let codables = try JSONDecoder().decode([codableSet].self, from: json)
-        return codables
-    } catch {
-        print("error: \(error)")
-    }
-    return nil
-}
 
 struct PersistenceController {
         
     static let shared = PersistenceController()
     
     static let populate: PersistenceController = {
-        
         let store = PersistenceController()
         let context = store.container.viewContext
+        populateStore(in: context)
         
-        
-        // TODO: Make a separate cleanup function
-        //Remove all 'Item's and GameSets:
-        for entity in (try? context.fetch(GameSet.fetchRequest())) ?? [] {context.delete(entity)}
-        for entity in (try? context.fetch(Faction.fetchRequest())) ?? [] {context.delete(entity)}
-        for entity in (try? context.fetch(Mechanic.fetchRequest())) ?? [] {context.delete(entity)}
-        for entity in (try? context.fetch(Modifier.fetchRequest())) ?? [] {context.delete(entity)}
-        try? context.save()
-        
-        
-        //TODO: Make separate function for populating Mechanics
-        let mechanicNames = ["Power-Counters", "Monsters", "Treasures", "Madness", "Dueling", "Burying", "Titans"]
-        for name in mechanicNames {
-            let m = Mechanic(context: context)
-            m.name_ = name
-            m.enabled = true
-        }
-        
-        //TODO: Make a separate function for populating the data
-        //Load data from file, Parse Json and create sets (and included factions)
-        if let data = readLocalFile(fromFile: "data.json") {
-            let codable_sets = ParseJson(fromJson: data)
-            codable_sets?.forEach() { cs in
-                let _ = GameSet(in: context, from: cs)
-            }
-        }
-
-        
+        #warning("Clean up")
 //        //Do a demo and disable singel faction: Check!!.
 //        if let faction = try? context.fetch(Faction.fetchRequest()).first {
 //            print("Disabled faction is: \(faction.name)")
 //            faction.enabled = false
 //        }
         
-//        //Do a demo and disable a set: Check!!.
-//        if let gameSet = try? context.fetch(GameSet.fetchRequest()).first {
-//            print("Disabled set is: \(gameSet.name)")
-//            gameSet.enabled = false
-//        }
+        //Do a demo and disable a set: Check!!.
+        if let gameSet = try? context.fetch(GameSet.fetchRequest()).first {
+            print("Disabled set is: \(gameSet.name)")
+            gameSet.enabled = false
+        }
         
 //        //Do a demo and disable a mechanic: Check!!
 //        if let mechanic = try? context.fetch(Mechanic.fetchRequest()).first {
@@ -129,22 +41,6 @@ struct PersistenceController {
         
         
         try? context.save()
-        
-        
-        /*
-        do {
-            let fetchedItems = try store.container.viewContext.fetch(itemFetch)
-            print("num of items: \(fetchedItems.count)")
-            
-            fetchedItems.forEach(store.container.viewContext.delete)
-            
-            try store.container.viewContext.save()
-            print("num of items: \(fetchedItems.count)")
-        } catch let e as NSError {
-            print(e.description)
-        }
-         */
-        
         return store
     }()
 
