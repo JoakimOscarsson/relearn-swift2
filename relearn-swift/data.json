@@ -1,0 +1,915 @@
+[
+{
+    "name": "Core Set",
+    "description": "What do pirates, ninjas, robots, zombies, aliens, wizards, and some other things have in common? They're all trying to take over the world! But they can't do it alone--so they're teaming up.\nEvery combo brings a different experience in this fast-paced shufflebuilding game. Take two 20-card decks, smash them together, and then rock your opponents'faces!\nEach faction has a different style: Pirates move cards. Zombies come back from the discard. Dinosaurs are just freaking huge. Each pairing creates different gameplay. And each game is a different throw-down!\nIs Smash Up a game you can live without? Not if you're awesome. Choose a side. Chose two! And start the carnage!",
+    "date": "2012-10-08",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Aliens",
+            "image": "Aliens",
+            "description": "Return minions in play to their owners' hands, instantly gain victory points without even scoring a base, and manipulate bases.",
+            "erratas": []
+        },
+        {
+            "name": "Dinosaurs",
+            "image": "Dinosaurs",
+            "description": "Play high-powered minions, boost your minions' power, and destroy weaker minions.",
+            "erratas": []
+        },
+        {
+            "name": "Ninjas",
+            "image": "Ninjas",
+            "description": "Destroy minions and actions, switch your minions in play with those in your hand, and sneak onto scoring bases at the last second.",
+            "erratas": []
+        },
+        {
+            "name": "Pirates",
+            "image": "Pirates",
+            "description": "Move around from base to base, especially during base scoring, and destroy weak minions, usually several at the same time.",
+            "erratas": []
+        },
+        {
+            "name": "Robots",
+            "image": "Robots",
+            "description": "Play a bunch of weak minions as extra minions, often with power bonuses.",
+            "erratas": []
+        },
+        {
+            "name": "Tricksters",
+            "image": "Tricksters",
+            "description": "Force other players to discard cards from their hand, destroy actions and weak minions, and make bases undesirable to play on.",
+            "erratas": []
+        },
+        {
+            "name": "Wizards",
+            "image": "Wizards",
+            "description": "Draw and play a lot of cards each turn, especially actions.",
+            "erratas": []
+        },
+        {
+            "name": "Zombies",
+            "image": "Zombies",
+            "description": "Discard cards from your deck, play minions directly from the discard pile, and retrieve discarded cards into your deck/hand.",
+            "erratas": []
+        }
+    ]
+},
+{
+    "name": "Awesome Level 9000",
+    "description": "Awesome level... rising...\nThought you had enough awesome with Pirates, Ninjas, and Zombies? Well, get a load of this, bucko: Killer Plants, Steampunks, Ghosts, and Bear Cavalry are here to smash into your game!\nPlants grow out of control. Steampunks build on bases. Ghosts shriek out of the ether, and Bear Cavalry scares away the opposition. Two players can play with just these decks, or mix them with original-recipe Smash Up for up to 4 players, and feel your awesome level skyrocket!\nFeels good, don't it?",
+    "date": "2013-04-13",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Bear Cavalery",
+            "image": "Bear_Cavalry",
+            "description": "Move other players' minions away from bases where you have minions, and destroy moving minions.",
+            "erratas": []
+        },
+        {
+            "name": "Ghosts",
+            "image": "Ghosts",
+            "description": "Gain benefits for discarding a lot of cards and gain benefit for having very few cards in hand, especially power boosts.",
+            "erratas": []
+        },
+        {
+            "name": "Killer Plants",
+            "image": "Killer_Plants",
+            "description": "Play extra minions, usually straight from your deck, play cards with delayed effects, usually happening at the start of your next turn, but that will give you more benefits as turns go by.",
+            "erratas": []
+        },
+        {
+            "name": "Steampunks",
+            "image": "Steampunk",
+            "description": "Play play-on-base actions that benefit you, giving you more power and movement, and salvage discarded actions from your discard pile, especially play-on-base actions.",
+            "erratas": []
+        }
+    ]
+},
+{
+    "name": "The Obligatory Cthulhu Set",
+    "description": "Just when you thought Smash Up might escape... the International Gaming Authority reminded us we were honor-bound to include Cthulhu in one of our products. So we set on to make the Cthulhu-est product ever which you now hold into your hands.\nSmash Up: The Obligatory Cthulhu Set features crazy Cthulhu cultists, fishy Innsmouth locals, horrifying Elder Things, and good old Miskatonic University members (the Fightin' Cephalopods). To be certain we got it right, this set also includes a new card type fittingly known as 'Madness', that each of these groups use to various effects. Bur remember that Madness brings you power but at a price (joking!).\nIf you're ready to embrace the creatures beyond the understanding of mortal men, then shuffle up these guys with your pirates, bear cavalry, and others for the most awesome fit of crazed insanity you've had in a long time!",
+    "date": "2013-09-16",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Elder Things",
+            "image": "Elder_Things",
+            "description": "Give Madness to other players, usually forcing them to choose between drawing one or giving you an advantage, force them to reshuffle those Madness cards into their deck, but on the other hand you have strong minions that are difficult to play.",
+            "mechanics": ["Madness"],
+            "erratas": []
+        },
+        {
+            "name": "Innsmouth",
+            "image": "Innsmouth",
+            "description": "Keep playing and refilling your hand with the same power-2 minions and gain benefits for having several minions with the same name on bases.",
+            "mechanics" : ["Madness"],
+            "erratas": []
+        },
+        {
+            "name": "Minions of Cthulhu",
+            "image": "Minions_of_Cthulhu",
+            "description": "Play powerful actions and recover cards from the discard pile at the cost of drawing Madness cards or destroying your own minions.",
+            "mechanics": ["Madness"],
+            "erratas": []
+        },
+        {
+            "name": "Miskatonic University",
+            "image": "Miskatonic_University-0",
+            "description": "Draw and discard Madness cards to use powerful effects and play cards that can get rid of them.",
+            "mechanics": ["Madness"],
+            "erratas": []
+        }
+    ]
+},
+{
+    "name": "Science Fiction Double Trouble",
+    "description": "Smash Up is back with even more wild factions in the mix! Science Fiction Double Feature brings four new groups to the base-smashing business, with abilities unlike those seen before. The Time Travelers will allow you to reuse and replay your cards time and time again. The Cyborg Apes take actions that attach to your minions to a whole new level. Super Spies use their mojo in espionage to plot out the future of you and your opponents, while the Shapeshifters could be anyone…\nSmash Up: Science Fiction Double Feature is an expansion to the wildly popular card game Smash Up where you take two completely separate genres, smash them up, and try to conquer bases on your way to ultimate victory. This expansion features Time Travelers, Cyborg Apes, Super Spies and Shapeshifters. Enough for two players and fully compatible with any other Smash Up product.",
+    "date": "2014-03-17",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Cyborg Apes",
+            "image": "Cyborg_Apes",
+            "description": "Power up your minions with powerful play-on-minion actions.",
+            "erratas": []
+        },
+        {
+            "name": "Shapeshifters",
+            "image": "Shapeshifters",
+            "description": "Copy other players' power and abilities, boost your minions' power, and destroy and replace your minions with other minions, especially from your deck.",
+            "erratas": []
+        },
+        {
+            "name": "Super Spies",
+            "image": "Super_Spies",
+            "description": "Sort your deck, take a peek and manipulate the top of each player's deck, force your opponents to discard cards, and play specials while bases are scoring.",
+            "erratas": []
+        },
+        {
+            "name": "Time Travelers",
+            "image": "Time_Travelers",
+            "description": "Repeat the abilities of your minions in play, retrieve cards from your discard pile, especially actions, and manipulate bases.",
+            "erratas": []
+        }
+    ]
+},
+{
+    "name": "The Big Geeky Box",
+    "description": "My What a Smashing Box…\nSmash Up has grown up! After many expansions we heard the cries of the masses who sought a better way for holding Smash Up cards and we have answered with the Smash Up: The Big Geeky Box! Not only are we giving you a box that will hold all of your current cards, it will hold many expansions to come, and we even include dividers for all the decks as well as those spiffy foam bricks that will keep your cards steady.",
+    "date": "2014-08-15",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Geeks",
+            "image": "Geeks",
+            "description": "Use your knowledge of the game to disrupt other players' plans.",
+            "erratas": []
+        }
+    ]
+},
+{
+    "name": "Monster Smash",
+    "description": "We were working in the lab, late one night... then we made Monster Smash! This expansion for Smash Up brings you four new creepy decks to scare your opponents to death! Or at least beat them to 15 points.\nVampires drain power from their victims. Mad Scientists contruct bizarre creations of great strength. Werewolves go berserk with power. Giant Ants swarm their victims. It's enough to make you run out of the theater in terror!\nSmash Up: Monster Smash comes with four new decks that use +1 power tokens in their ways, and will add all new strategies to your other Smash Up factions!",
+    "date": "2014-09-15",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Giant Ants",
+            "image": "Giant_Ants-0",
+            "description": "Generate a lot of +1 power counters and flexibly transfer them among your minions.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Mad Scientists",
+            "image": "Mad_Scientists",
+            "description": "Generate a lot of +1 power counters, especially when one of your minions is destroyed, and remove them to gain benefits.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Vampires",
+            "image": "Vampires",
+            "description": "Destroy weak minions and generate +1 power counters, especially from the destruction of minions.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Werewolves",
+            "image": "Werewolves",
+            "description": "Gain temporary power boosts at very specific times, gain benefits from minions with the highest-power, and destroy weaker minions.",
+            "erratas": []
+        }
+    ]
+},
+{
+    "name": "Pretty Pretty Smash Up",
+    "description": "Think only pirates, time travelers, vampires, and bears can smash bases? Well, get ready to be taught a lesson... in the nicest way possible!\nPretty Pretty Smash Up brings the sweetest factions ever to the vicious fight for victory! Kitty Cats use their incredible cuteness to take control of enemy minions. Princesses ply their royalty, beauty and even their love to get their way. Fairies' fickle tricks give you options like never before, while the herds of Mythic Horses work together for dominance! Get ready: your opponents will never know what hit them!",
+    "date": "2015-03-09",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Fairies",
+            "image": "Fairies",
+            "description": "Play cards with a choice between two effects and mess with other players' non-standard actions, especially play-on-minion actions.",
+            "erratas": []
+        },
+        {
+            "name": "Kitty Cats",
+            "image": "Kitty_Cats",
+            "description": "Weaken other players' minions, temporarily take control of weak minions, and destroy your own minions for effects, whether minions you played or minions you took control of.",
+            "erratas": []
+        },
+        {
+            "name": "Mythic Horses",
+            "image": "Mythic_Horses-0",
+            "description": "Gain benefits for playing or simply having minions on the same base as another one of your minions.",
+            "erratas": []
+        },
+        {
+            "name": "Princesses",
+            "image": "Princesses",
+            "description": "Play with a reduced number of minions in your deck, but with a cast of six power-5 minions with useful abilities, and support your deck with movement, card draw and minion retrieval.",
+            "erratas": []
+        } 
+    ]
+},
+{
+    "name": "Smash Up: Munchkin",
+    "description": "History records many great pairings. Death and taxes. Peanut butter and chocolate. Cats and cheeseburgers.\nNow we've smashed up Munchkin with Smash Up!\nSmash Up is the game where each player smashes two weird factions together and tries to crush all the others. The factions in this set are Munchkin races and classes: Orcs, Warriors, Halflings, Clerics, Dwarves, Elves, Thieves, and Mages! All the factions have different powers, and every team-up is different.\nThis set may be played by itself, but all the factions are fully compatible with your existing Smash Up sets. There are also brand-new card types. Monsters lurk around the bases, and Treasures give you new rewards when you smash a base!\n- Eight entirely new decks!\n- New Monster and Treasure cards!\n- Amazing new Munchkin art drawn by John Kovalic and painted by Francisco Rico Torres and Gong Studios!",
+    "date": "2015-09-28",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Clerics",
+            "image": "Clerics",
+            "description": "Retrieve your discarded cards, usually random cards, and move your minions away after their bases score.",
+            "mechanics": ["Monsters"],
+            "erratas": []
+        },
+        {
+            "name": "Dwarves",
+            "image": "Dwarves",
+            "description": "Draw treasures cards, usually from the treasure discard pile, and gain power boost from play-on-minion treasures.",
+            "mechanics": ["Treasures", "Monsters"],
+            "erratas": []
+        },
+        {
+            "name": "Elves",
+            "image": "Elves",
+            "description": "Help other players with card draw and power boosts, while helping yourself in exchange.",
+            "mechanics": ["Power-Counters", "Monsters"],
+            "erratas": []
+        },
+        {
+            "name": "Halflings",
+            "image": "Halflings",
+            "description": "Draw and retrieve a lot of minions and play them as extras on bases where you're lagging behind other players.",
+            "mechanics": ["Monsters"],
+            "erratas": []
+        },
+        {
+            "name": "Mages",
+            "image": "Mages",
+            "description": "Discard cards for benefits, such as power gain, minion destruction, extra cards, and monster manipulation.",
+            "mechanics": ["Monsters"],
+            "erratas": []
+        },
+        {
+            "name": "Orcs",
+            "image": "Orcs-0",
+            "description": "Make your minions insensitive to actions and gain benefits for having more power or more minions than other players.",
+            "mechanics": ["Monsters"],
+            "erratas": []
+        },
+        {
+            "name": "Thieves",
+            "image": "Thieves",
+            "description": "Draw treasures, gain benefits for having treasures in hand, usually discarding them for the benefits, and steal things from other players, such as cards or VPs.",
+            "mechanics": ["Treasures", "Monsters"],
+            "erratas": []
+        },
+        {
+            "name": "Warriors",
+            "image": "Warriors",
+            "description": "Play and destroy monsters on bases to manipulate their breakpoints and gain treasures, and gain power boosts from the presence or the destruction of monsters.",
+            "mechanics": ["Monsters", "Power-Counters"],
+            "erratas": []
+        } 
+    ]
+},
+{
+    "name": "It's Your Fault!",
+    "description": "You've done it this time…\nYou've made one of the best Smash Up sets ever! We let the fans vote and determine new factions for Smash Up, and you came through with some awesomeness. All four factions in this box were the top of thousands of nominations, and then survived a bracket vote, all to get to you today!\nSmash Up: It's Your Fault includes Sharks, who plan to make chum of their opponents. Also inside you'll find Superheroes, flying off the comics page to defeat enemies. You chose to bring the legends of Greek Myth to the table, and finally the imposing might and destructive power of Dragons!\nOf course, we couldn't give you Sharks without providing a Shark Delivery System™.",
+    "date": "2016-03-17",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Dragons",
+            "image": "Dragons",
+            "description": "Play minions and play-on-base actions that manipulate their bases to make them unattractive for other players.",
+            "erratas": []
+        },
+        {
+            "name": "Mythic Greeks",
+            "image": "Mythic_Greeks-0",
+            "description": "Get power boosts each time you play an action.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Sharks",
+            "image": "Sharks",
+            "description": "Move around and destroy weaker minions to get +1 power counters and extra minion plays.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Superheroes",
+            "image": "Superheroes",
+            "description": "Protect your minions from destruction and morph your weak minions into power-5-or-more minions.",
+            "erratas": []
+        },
+        {
+            "name": "Tornados",
+            "image": "Tornados-0",
+            "description": "Move all minions, move your own minions, move other players' minions, even during base scoring.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        } 
+    ]
+},
+{
+    "name": "Cease and Desist",
+    "description": "We're gonna totally get busted.\nSmash Up: Cease and Desist brings you some of the coolest new factions that are TOTALLY not anything at all like some awesome moves and TV shows that we are really into. Not at all.\nAstroknights use the power of the Fours to defeat your enemies. The Star Roamers move about space, teleporting your minions from one quadrant to another. Changerbots can transmorph into various forms, with new abilities and strengths. And finally the Ignobles fight over the king's seat, but don't trust any of them!",
+    "date": "2016-09-15",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Astroknights",
+            "image": "Astro_Knights",
+            "description": "Play with a cast of ten unique minions that focus on drawing and playing actions that directly increase minion power.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Changerbots",
+            "image": "Changerbots",
+            "description": "Play play-on-minion actions, use talents to switch your minions between a powerful form and a weaker form with a useful ability, and move your minions around.",
+            "erratas": []
+        },
+        {
+            "name": "Ignobles",
+            "image": "Ignobles",
+            "description": "Give control of your minions to other players for benefits, and take back control of them when the time is right.",
+            "erratas": []
+        },
+        {
+            "name": "Star Roamers",
+            "image": "Star_Roamers",
+            "description": "Return your minions to hand for benefits, and manipulate how your minions are affected, like moving them instead of returning them or having your power-2 minions be affected instead of others.",
+            "erratas": []
+        } 
+    ]
+},
+{
+    "name": "What Were We Thinking?",
+    "date": "2017-03-29",
+    "description": "Is that a Teddy Bear?\nHow motley are the creatures we find here!\nO strange new box that has such factions in it!\nWhat were we thinking? Tell, what’s in a name?\nThis set has factions standing for four ages.\nAt first the children, hugging Teddy Bears\nWhose cuteness oft confounds opposing minions.\nThe youth will next pursue their favorite band\nOf Rock Stars questing for the greatest bases.\nMature Explorers, restless in midlife,\nStrive always to be first in new horizons.\nLast, wise in life’s pursuits, the Grannies shall\nManipulate their decks to draw what’s needed.\nThis tenth expansion we now bring to you,\nAnd celebrate achieving fifty factions!",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Explorers",
+            "image": "Explorers",
+            "description": "Take a peek and choose which base will come next, play extra minions on new bases to take early leads, and move minions all over the place.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Grannies",
+            "image": "Grannies",
+            "description": "Manipulate your deck, draw/play actions from the top of your deck and draw/play minions from the bottom of your deck.",
+            "erratas": []
+        },
+        {
+            "name": "Rock Stars",
+            "image": "Rock_Stars",
+            "description": "Collect Groupies, gain advantages from bases with high breakpoints, play and move many minions at once to break bases.",
+            "erratas": []
+        },
+        {
+            "name": "Teddy Bears",
+            "image": "Teddy_Bears",
+            "description": "Play low-power minions as extras, gain benefits from the presence of other players' minions on their bases, and play actions that neutralize strong opposing minions.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        } 
+    ]
+},
+{
+    "name": "All Stars Event Kit",
+    "description": "And Now Your Smash Up AAAAAAALL-STAAAARS!\nThat's right, the best of the best of Smash Up have teamed up to be the best basketball team in all of outer space. Because that's their jam.\nStill with us? OK great! This Smash Up All-Stars event kit contains many copies of the new faction 'All-Stars' that you can give out at in-store events of Smash Up! Also includes upgraded power tokens and a super cool oversized playmat that'll make Smash Up stand out in your store.",
+    "date": "2017-07-12",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Smash Up All Stars",
+            "image": "Smash_Up_All_Stars_logo",
+            "description": "Draw and retrieve cards from your deck and discard pile to get your best cards out as soon as possible and keep them around for as long as possible.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        } 
+    ]
+},
+{
+    "name": "Big in Japan",
+    "description": "Are we turning Japanese?\nWe really think so...\nSmash Up is back after a vacation in the Far East, and it brought all new factions like you've never seen before! Unless you, like, watch TV or movies or read comics or something. But who does that?\nThe Kaiju storm onto the scene and show you why we call the set Big in Japan. Magical Girls use their spells and the power of teamwork to win the base. The mighty Mega Troopers defeat any foe with their martial arts skills... and giant flippin' robot. And finally, because we had to have them all, the Itty Critters will defeat any challengers, if you have the heart of the... wait, sorry, mixing references.",
+    "date": "2017-09-06",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Itty Critters",
+            "image": "Itty_Critters",
+            "description": "Summon small minions directly from your deck just for their effects and return them to the bottom of your deck at the end of the turn.",
+            "mechanics": ["Power-Counters", "Titans"],
+            "erratas": []
+        },
+        {
+            "name": "Kaiju",
+            "image": "Kaiju-0",
+            "description": "Play with fewer minions than normal, but gain power through your play-on-base actions, destroy other players' cards, manipulate bases and summon a giant freaking titan.",
+            "mechanics": ["Titans"],
+            "erratas": []
+        },
+        {
+            "name": "Magical Girls",
+            "image": "Magical_Girls",
+            "description": "Use abilities that get better the more minions you have on the same base.",
+            "mechanics": ["Titans"],
+            "erratas": []
+        },
+        {
+            "name": "Mega Troopers",
+            "image": "Mega_Troopers",
+            "description": "Wait until a base scores to use all kinds of strong Special abilities.",
+            "mechanics": ["Titans"],
+            "erratas": []
+        } 
+    ]
+},
+{
+    "name": "Smash Up Sheep Promo",
+    "description": "Congratulations! As a reward for answering our Smash Up survey, we present you with this new faction: Sheep! Don’t believe their bad rap: Following others around and copying their actions is really pretty powerful!",
+    "date": "2017-12-01",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Sheep",
+            "image": "Sheep_Icon",
+            "description": "Move your minions around, especially after another minion moves, gain benefits for moving your minions and repeat other players' actions.",
+            "erratas": []
+        } 
+    ]
+},
+{
+    "name": "That ´70s Expansion",
+    "description": "Can You Dig It?\nRight on! Hop in the Waywaywayback Machine and join Smash Up in the dy-no-mite ’70s! Few decades have had as much style as the ’70s, and it created some memorable factions we knew you’d want to use to smash bases. We had to give them to you, because, who loves ya, baby?\nThe Disco Dancers know the strength of dancing together, and can really shake things up when they copy each other. The Kung Fu Fighters make power flow like water among themselves, and even from their enemies. The Truckers move themselves and their load across the bases, all while sticking it to corrupt law enforcement. And the Vigilantes dish out hard-nosed justice like no others. Solid!",
+    "date": "2018-04-21",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Disco Dancers",
+            "image": "Disco",
+            "description": "Duplicate the effects caused by standard actions on minions, thus increasing the number of affected minions.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Kung Fu Fighters",
+            "image": "Kung_Fu",
+            "description": "Generate +1 power counters, drain them from any minions, even other players', and destroy weaker minions.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Truckers",
+            "image": "Trucker",
+            "description": "Transfer play-on-base actions around in order to move your minions, and mess with other players' play-on-base actions, either by transferring them elsewhere or taking control of them.",
+            "erratas": []
+        },
+        {
+            "name": "Vigilantes",
+            "image": "Vigilante",
+            "description": "Play with a reduced number of minions in your deck, but with a team of seven power-4 minions with powerful and oppressive abilities, including hard removal, power boost and retaliation.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        } 
+    ]
+},
+{
+    "name": "The Bigger Geekier Box",
+    "description": "We’re Gonna Need a Bigger Box!\nThe Smash Up Bigger Geekier Box is the ultimate answer to storing Smash Up, which is of course the greatest need of our time. This all-new Bigger Geekier Box has four large rows for storing all of your Smash Up cards, lots of foam bricks for stable storage, a closable token holder, and the all-new Smash Up Comprehensive Rulebook! This rulebook contains all of the rules for every unique card type introduced throughout Smash Up expansions, as well as clarifications on any card that might have bent your brain in funny directions. Not only that, but the box also contains the Geeks faction, and the All-Stars faction!\nDon’t be like those poor saps on inREPLACETHIS!!fomercials, constantly dropping your Smash Up cards in your salad, your yard, etc. Use the best in Smash Up storage: The Bigger, Geekier Box!",
+    "date": "2018-08-15",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Geeks",
+            "image": "Geeks",
+            "description": "Use your knowledge of the game to disrupt other players' plans.",
+            "erratas": []
+        },
+        {
+            "name": "Smash Up All Stars",
+            "image": "Smash_Up_All_Stars_logo",
+            "description": "Draw and retrieve cards from your deck and discard pile to get your best cards out as soon as possible and keep them around for as long as possible.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        } 
+    ]
+},
+{
+    "name": "Oops, Your Did It Again",
+    "description": "Now You’ve Done It … Again!\nSmash Up has turned the asylum over to the inmates yet again! After the success of It’s Your Fault, we decided to let the fans choose the factions that would make up the latest set of Smash Up, and they went for some powerful choices! A huge field was whittled down to the top four, and here they are: Cowboys call out opposing minions for shootouts, Samurai face their noble end in battle to bring glory to their player, Ancient Egyptians bury secrets deep in the sands, while the Vikings… well they just take other people’s stuff!",
+    "date": "2018-09-05",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Ancient Egyptians",
+            "image": "Ancient_Egyptians_logo",
+            "description": "Bury cards for use in the future and gain benefits from burying and uncovering cards.",
+            "mechanics": ["Burying", "Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Cowboys",
+            "image": "Cowboys_logo",
+            "description": "Start duels with other players' minions to get rid of them, and greatly boost your own power to win duels.",
+            "mechanics": ["Dueling", "Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Samurai",
+            "image": "Samurai_logo",
+            "description": "Get various benefits whenever your minions go to the discard pile from play.",
+            "mechanics": ["Dueling", "Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Vikings",
+            "image": "Vikings_logo",
+            "description": "Steal other players' cards and gain power at the cost of placing cards from your hand on the top of your deck.",
+            "erratas": []
+        } 
+    ]
+},
+{
+    "name": "World Tour: International Incident",
+    "description": "Come along on the Smash Up World Tour!\nInternational Incident is the start of a year-long trip around the four corners of the world to visit some of the coolest heroes that different cultures have to offer! From the cold of Canada to the heat of Mexico and beyond, this first World Tour set adds awesome factions to your fight for the bases.\nThe Luchadores bring their high-flying, death-defying wrestling combinations to the fight, and the Mounties are at their strongest while they get their man and keep the Great White North safe! The Musketeers use their explosive action chains to gallantly defeat enemies, and the Sumo Wrestlers bulk up and throw their weight around, knocking their enemies away from the base.",
+    "date": "2019-04-22",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Luchadors",
+            "image": "Luchadors_logo",
+            "description": "Search for and play actions on other players' minions, especially Set-Up actions, as a requirement to activate or play cards with much greater effects.",
+            "erratas": []
+        },
+        {
+            "name": "Mounties",
+            "image": "Mounties_logo",
+            "description": "Move to bases where there are other players' minions and buff your minions on bases where other players' minions are present.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Musketeers",
+            "image": "Musketeers_logo",
+            "description": "Chain a lot of extra actions that can directly affect your own minions and gain even more power, card draw and extra action as a benefit.",
+            "erratas": []
+        },
+        {
+            "name": "Sumo Wrestlers",
+            "image": "Sumo_Wrestlers_logo",
+            "description": "Discard cards to gain power, move other players' minions away from bases where you have minions and draw a lot of cards.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        }
+    ]
+},
+{
+    "name": "World Tour Event Kit",
+    "description": "",
+    "date": "2019-07-26",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Penguins",
+            "image": "Penguins_logo_2",
+            "description": "Play random extra minions directly out of your deck and trigger abilities each time you play a minion that way.",
+            "mechanics": ["Titans"],
+            "erratas": []
+        } 
+    ]
+},
+{
+    "name": "Smash Up: Penguins",
+    "description": "These booster style packs each contain one entire set of the Penguins faction, including a divider for use in the Bigger Geekier Box. The Penguins bring all-new strategies to Smash Up that the players will want to try out! Every player who attends should receive a pack. If you have more than 8 attendees, give them to the top 8.",
+    "date": "2019-08-01",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Penguins",
+            "image": "Penguins_logo_2",
+            "description": "Play random extra minions directly out of your deck and trigger abilities each time you play a minion that way.",
+            "mechanics": ["Titans"],
+            "erratas": []
+        } 
+    ]
+},
+{
+    "name": "Smash Up TITANS",
+    "description": "These booster style packs contain all-new Smash Up Titans, for a selection of classic Smash Up factions! You’ll find Titans for the Super Spies, Explorers, and more. Give these out to anyone who attends your Smash Up event, enjoys a Smash Up demonstration at your store, or in any other method you prefer.",
+    "date": "2019-08-01",
+    "bases": "",
+    "modifiers": [
+        {"modifier": "Titans", "modifies": [
+            "Vampires",
+            "Wizards",
+            "Tricksters",
+            "Ghosts",
+            "Minions of Cthulhu",
+            "Innsmouth",
+            "Giant Ants",
+            "Warewolves",
+            "Bear Cavalry",
+            "Changerbots",
+            "Super Spies",
+            "Fairies",
+            "Ignobles",
+            "Pirates",
+            "Time Travelers",
+            "Explorers"]
+        },
+        {"modifier": "Power-Counters", "modifies": [
+            "Tricksters",
+            "Minions of Cthulhu",
+            "Bear Cavalry",
+            "Super Spies",
+            "Ignobles"]
+        }
+    ]
+},
+{
+    "name": "World Tour: Culture Shock",
+    "description": "The World Tour continues!\nIn order to see every continent on our world tour, we just had to include five factions! One entire free faction of fun for the price of four!\nCulture Shock takes us through the folk and fairy tales of: Russia, where minions are frequently transformed; West Africa, where sharing stories and cards is valued; and Germany, where uniting characters from the same tale gives multiple benefits. We also look at the incredible histories of: the Inca Empire, known for its roads and monumental architecture; and Polynesians, who spread out on as many islands as possible. Did we get all the details of these rich cultures right? Heck no, we make silly card games. Don’t tell anyone on Twitter.",
+    "date": "2019-09-06",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Anasi Tales",
+            "image": "Anansi_Tales_logo",
+            "description": "Give cards to other players for benefit, gain benefits when they play or discard them, and give away actions that are continuously passed between players.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Ancient Incas",
+            "image": "Ancient_Incas_logo",
+            "description": "Draw, play and replay play-on-base actions that activate abilities that trigger each time you play a play-on-base action, especially on the same base.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Grimms' Fairy Tales",
+            "image": "Grimms_Fairy_Tales_logo",
+            "description": "Play with a team of several pairs of minions who can only work when they are together with their partner.",
+            "erratas": []
+        },
+        {
+            "name": "Polynesian Voyages",
+            "image": "Polynesian_Voyagers_logo",
+            "description": "Move to bases where you don't already have a minion, gain power and +1 power counters from play-on-minion actions, and put additional bases into play.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Russian Fairy Tales",
+            "image": "Russian_Fairy_Tales_logo",
+            "description": "Replace any minions in play with other ones, usually random ones played off the top of their owner's deck.",
+            "erratas": []
+        } 
+    ]
+},
+{
+    "name": "Dead Reckoning Promo",
+    "description": "",
+    "date": "2020-07-01",
+    "bases": "",
+},
+{
+    "name": "Smash Up: Marvel",
+    "description": "Unlikely allies, unheard of enemies! All trying to take on the universe by teaming up like you’ve never seen them before.\nEach new combination brings a different experience in this version of the fast-paced shufflebuilding game. Take two twenty-card decks and smash them together, then rock your opponents’ world!\nEvery pairing creates a different scenario with unique game play, each with its own awesomeness!",
+    "date": "2021-02-02",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Avengers",
+            "image": "Avengers_logo",
+            "description": "The Avengers faction assembles six mighty heroes whose different skills can handle any situation. Each has a signature action that can be used at any time, but is stronger when used with its hero. Though their numbers are few, they have several ways to cycle through their deck and recycle discarded cards to get what they need when they need it.",
+            "erratas": []
+        },
+        {
+            "name": "Hydra",
+            "image": "Hydra_logo",
+            "description": "Cut off one head and two shall take its place! Hydra is not afraid of character destruction since it makes them stronger, especially when their leaders order it. Hydra characters can overrun a base, and since they have several ways to swell their numbers, it won't be long until they are ready for more conquests.",
+            "erratas": []
+        },
+        {
+            "name": "Kree",
+            "image": "Kree_icon",
+            "description": "The Kree are an advanced militaristic race who strike down their foes with ruthless efficiency. Their strengths are in extra action play, additional power, and card draw. Their cards can be deployed for either long-term advantage or for devastating combos.",
+            "erratas": []
+        },
+        {
+            "name": "Masters of Evil",
+            "image": "Masters_of_Evil_logo",
+            "description": "The Masters of Evil seek to control the world through any means! In addition to the VP rewards from bases, they've developed alternate methods of getting VPs, and they get stronger the more VPs they have. They are also good at destroying characters, to slow other players, and increase their strategic gain.",
+            "erratas": []
+        },
+        {
+            "name": "S.H.I.E.L.D",
+            "image": "SHIELD_icon",
+            "description": "PS.H.I.E.L.D. carefully monitors the world and stands ready to jump in to stop their foes. Its agents excel at both calling in extra characters for help and strengthening each other. Careful planning allows them to play cards in the right order to maximize their assets.",
+            "erratas": []
+        },
+        {
+            "name": "Sinister Six",
+            "image": "Sinister_Six_icon",
+            "description": "The Sinister Six love to prey on weakness. They have many ways to make bases weak, and get many benefits from weaker bases. They have several base modifiers and ways to reuse them and their characters. Since they make base breaking easier, they need to be careful to have the most power there when it happens.",
+            "erratas": []
+        },
+        {
+            "name": "Spider-Verse",
+            "image": "Spider-Verse_icon",
+            "description": "Web-slinging heroes from parallel universes have come together in a common fight to protect their neighborhoods. They specialize in swinging in before and after bases score to sway things in their favor -- as long as they have someone already there. But they can be even stronger when they join forces during their own turn, so they can be busy no matter whose turn it is.",
+            "erratas": []
+        },
+        {
+            "name": "Ultimates",
+            "image": "Ultimates_icon",
+            "description": "The Ultimates patrol the universe looking for cosmic threats. They are strong in movement, and movement makes them stronger. They also work well together, so they can spread out, and then unite as a powerful team where the need is greatest.",
+            "erratas": []
+        } 
+    ]
+},
+{
+    "name": "Smash Up: Goblins",
+    "description": "The next Smash Up Faction - the Goblins!  Goblins bring chaos, insanity, silliness... in a semi-controlled way.  Goblins use coin flips to... wait, no, don't go to another listing, listen!  They have ways of manipulating their coin flips, and many times either result is good.  You don't get to be the boss of a mob of insane pyromaniacs without some level of control...",
+    "date": "2021-05-10",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Goblins",
+            "image": "Goblins_logo_2",
+            "description": "Flip coins to determine what benefits you can get.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        } 
+    ]
+},
+{
+    "name": "Smash Up Knights of the Round Table",
+    "description": "Grab your coconuts and head for Camelot!",
+    "date": "2021-09-17",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Knights of the Round Table",
+            "image": "Goblins_logo_2",
+            "description": "They ride all over the bases, completing quests to get various prizes.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        }
+    ]
+},
+{
+    "name": "Smash Up: Disney Edition",
+    "description": "Unlikely allies, fantastical foes! Disney animated all-stars are competing to rule the kingdom and YOU are behind the magic! Smash together combos beyond your imagination to create the ultimate cast in this magical version of the fast-paced shufflebuilding card game. Choose two 20-card decks and mix them together to outdo your opponents’ pairings! Each combination creates its own story and unique game play for a new adventure every time!",
+    "date": "2022-06-21",
+    "bases": "",
+    "factions": [
+        {
+            "name": "Aladdin",
+            "image": "",
+            "description": "The Aladdin deck can get the cards you need, whether from your own deck and discard pile, or from other players. Some cards give other kinds of help: extra plays from Jasmine, strength from Palace Guard, and movement from Carpet. But the card that helps the most is Genie, which can fetch three Wishes of phenomenal cosmic power!",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Beauty and the Beast",
+            "image": "",
+            "description": "Enchantments abound in Beast’s castle! Some cards discard other cards to do their effects, some cards can play themselves after being discarded, and some cards are triggered by discards. The Belle and Beast cards both help the discarding and help each other, and Petals of the Rose helps sort the deck.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Big Hero 6",
+            "image": "",
+            "description": "The students at San Fransokyo Tech’s robotics lab have become a team of heroes to fight the mysterious Yokai! This deck uses power counters as swarms of Microbots and gear upgrades, moving around and improving your characters’ abilities. Use the talents of cards like Hiro Hamada to turn Baymax, Wasabi, and the rest into a formidable fighting force.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Frozen",
+            "image": "",
+            "description": "If you want to build a snowman, the Elsa card will help fetch and play the Olaf, Marshmallow, and Snowgies cards, and can often strengthen them. The Anna, Kristoff, and Sven cards will find each other, while many of your action cards assist in setting up your hand and discard pile for powerful and effective turns.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Mulan",
+            "image": "",
+            "description": "The Huns have invaded China, and the call for troops has gone out! Mulan, Li Shang, and other cards can build up their strength quickly with power counters, and can bolster your hand by drawing extra cards. Hinder your opponents’ progress on bases by triggering an Avalanche, and ambush your foes with the Shan Yu card.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "The Lion King",
+            "image": "",
+            "description": "The circle of life is strong in the Lion King deck. The departure of one character often leads to the arrival of new ones, with effects that allow you to search for or play extra characters. The Simba card can return to your deck after leaving play, and Mufasa’s presence in your discard pile makes many of your other characters and actions better.    ",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "The Nightmare Before Christmas",
+            "image": "",
+            "description": "Jack Skellington and his Halloween Town cohorts are spreading their version of Christmas to everyone in the best way they know how. Their gifts come in the form of character modifiers that can be used to help you or hinder others. This deck is the gift that keeps on giving, with cards that can stick around or come back after bases have been scored.",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "Wreck-It Ralph",
+            "image": "",
+            "description": "Let the race commence! Vanellope Von Schweetz and the other racers’ cards can get stronger as they move from base to base, while King Candy disrupts others’ plans. The Wreck-It Ralph, Fix-It Felix Jr., and Sergeant Calhoun cards can use Cy-Bug Infestation and many other base modifiers to set things up for yourself and wreck things for your opponents!",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        }
+    ]
+},
+{
+    "name": "10th Anniversary",
+    "description": "Even after 10 years, Smash Up is still going strong! This special 10th Anniversary celebration set comes full of new fun for your base-smashing outings. New factions, brand new Titans, a retrospective art book, an alternate format Big Base, and more!",
+    "date": "2022-10-28",
+    "bases": "",
+    "modifiers": [
+        {"modifier": "Titans", "modifies": [
+            "Tornados",
+            "Dinosaurs",
+            "Grannies",
+            "Sharks",
+            "Ninjas",
+            "Killer Plants",
+            "Cowboys",
+            "Kung Fu Fighters",
+            "Ancient Egyptains",
+            "Mad Scientists",
+            "Superheroes"]
+        },
+        {"modifier": "Power-Counters", "modifies": [
+            "Tornados",
+            "Dinosaurs",
+            "Killer Plants"]
+        }
+    ],
+    "factions": [
+        {
+            "name": "Mermaids",
+            "image": "",
+            "description": "Add description here!!",
+            "erratas": []
+        },
+        {
+            "name": "Sheep",
+            "image": "",
+            "description": "Decades of ewe-genics has transformed these harmless, dumb, grazing animals into harmful, dumb, grazing animals. They obediently and harmlessly follow other minions around from base to base… then they mercilessly crush their opponents with a wave of minions no one can stop. They are baaaaad news!",
+            "erratas": []
+        },
+        {
+            "name": "Skeletons",
+            "image": "",
+            "description": "Add description here!!",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        },
+        {
+            "name": "World Champs",
+            "image": "",
+            "description": "Add description here!!",
+            "mechanics": ["Power-Counters"],
+            "erratas": []
+        }
+    ]
+}
+]

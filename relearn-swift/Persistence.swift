@@ -6,25 +6,150 @@
 //
 
 import CoreData
+import SwiftUI
+
+
+struct codableSet: Codable {
+    let name: String
+    let description: String
+    let date: String
+    let bases: String?
+    let factions: [codableFaction]?
+    let modifiers: [codableModifierSpec]?
+}
+
+struct codableFaction: Codable {
+    let name: String
+    let image: String
+    let description: String?
+    let overview: String?
+    let bases: String?
+    let mechanics: [String]?
+    let erratas: [codableErrata]?
+    let clarifications: [codableClarification]?
+    let faq: [codableFaq]?
+}
+
+struct codableModifierSpec: Codable {
+    let modifier: String
+    let modifies: [String]
+}
+
+struct codableErrata: Codable {
+    let cardname: String
+    let errata: String
+}
+
+struct codableFaq: Codable {
+    let cardname: String
+    let question: String
+    let answer: String
+}
+
+struct codableClarification: Codable {
+    let cardname: String
+    let clarification: String
+}
+
+
+func readLocalFile(fromFile f: String) -> Data?{
+    let file = f.split(separator: ".")
+    if let filePath = Bundle.main.path(forResource: String(file[0]), ofType: String(file[1])) {
+        let fileUrl = URL(fileURLWithPath: filePath)
+        let data = try? Data(contentsOf: fileUrl)
+        return data
+    }
+    return nil
+}
+
+func ParseJson(fromJson json: Data) -> [codableSet]? {
+    do {
+        let codables = try JSONDecoder().decode([codableSet].self, from: json)
+        return codables
+    } catch {
+        print("error: \(error)")
+    }
+    return nil
+}
 
 struct PersistenceController {
+        
     static let shared = PersistenceController()
+    
+    static let populate: PersistenceController = {
+        
+        let store = PersistenceController()
+        let context = store.container.viewContext
+        
+        
+        // TODO: Make a separate cleanup function
+        //Remove all 'Item's and GameSets:
+        for entity in (try? context.fetch(GameSet.fetchRequest())) ?? [] {context.delete(entity)}
+        for entity in (try? context.fetch(Faction.fetchRequest())) ?? [] {context.delete(entity)}
+        try? context.save()
+        
+        
+        //TODO: Make a separate function for populating the data
+        //Load data from file
+        if let data = readLocalFile(fromFile: "data.json") {
+            let codable_sets = ParseJson(fromJson: data)
+            codable_sets?.forEach() { cs in
+                let set = GameSet(in: context, from: cs)
+            }
+        }
+        
+        //Parse json
+//        if let codable_sets = ParseJson(fromJson: data) {
+//
+//        }
+        
+        //Step through json and create NSObj sets
+
+        //Recursively create factions from the set-creation function.
+        
+        
+//        //Manually add 3 sets
+//        let names = ["Aliens", "Pirates", "Zombies", "etc"]
+//        names.forEach { name in
+//            let set = GameSet(context: context)
+//            set.name_ = name
+//        }
+        
+        try? context.save()
+        
+        
+        /*
+        do {
+            let fetchedItems = try store.container.viewContext.fetch(itemFetch)
+            print("num of items: \(fetchedItems.count)")
+            
+            fetchedItems.forEach(store.container.viewContext.delete)
+            
+            try store.container.viewContext.save()
+            print("num of items: \(fetchedItems.count)")
+        } catch let e as NSError {
+            print(e.description)
+        }
+         */
+        
+        return store
+    }()
 
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-        }
-        do {
-            try viewContext.save()
-        } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
+//        for _ in 0..<10 {
+//            let newItem = Item(context: viewContext)
+//            newItem.timestamp = Date()
+//        }
+//        do {
+//            try viewContext.save()
+//        } catch {
+//            // Replace this implementation with code to handle the error appropriately.
+//            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//            let nsError = error as NSError
+//            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//        }
         return result
     }()
 
