@@ -8,13 +8,67 @@
 import Foundation
 import CoreData
 
-let mechanicNames = ["Power-Counters", "Monsters", "Treasures", "Madness", "Dueling", "Burying", "Titans"]
+
 let jsonFile = "data.json"
 
 func populateStore(in viewContext: NSManagedObjectContext) {
-    clearStore(in: viewContext)
-    populateMechanics(in: viewContext)
-    populateDataFromJson(in: viewContext)
+    if let data = readLocalFile(fromFile: jsonFile) {
+        let json = parseJson(fromJson: data)
+        guard let mechanics = json?.0 else { return }
+        guard let sets = json?.1 else { return }
+        
+        clearStore(in: viewContext)
+        populateMechanics(in: viewContext, mechanicNames: mechanics)
+        populateData(in: viewContext, codableSets: sets)
+    }
+}
+
+func readLocalFile(fromFile f: String) -> Data?{
+    let file = f.split(separator: ".")
+    if let filePath = Bundle.main.path(forResource: String(file[0]), ofType: String(file[1])) {
+        let fileUrl = URL(fileURLWithPath: filePath)
+        let data = try? Data(contentsOf: fileUrl)
+        return data
+    }
+    return nil
+}
+
+func parseJson(fromJson json: Data) -> ([String], [codableSet])? {
+    do {
+        let json = try JSONDecoder().decode(jsonData.self, from: json)
+        return (json.mechanics, json.sets)
+    } catch {
+        print("error: \(error)")
+    }
+    return nil
+}
+
+func clearStore(in viewContext: NSManagedObjectContext) {
+    for entity in (try? viewContext.fetch(GameSet.fetchRequest())) ?? [] {viewContext.delete(entity)}
+    for entity in (try? viewContext.fetch(Faction.fetchRequest())) ?? [] {viewContext.delete(entity)}
+    for entity in (try? viewContext.fetch(Mechanic.fetchRequest())) ?? [] {viewContext.delete(entity)}
+    for entity in (try? viewContext.fetch(Modifier.fetchRequest())) ?? [] {viewContext.delete(entity)}
+    try? viewContext.save()
+}
+
+func populateMechanics(in viewContext: NSManagedObjectContext, mechanicNames: [String]) {
+    for name in mechanicNames {
+        let m = Mechanic(context: viewContext)
+        m.name_ = name
+        m.enabled = true
+    }
+}
+
+func populateData(in viewContext: NSManagedObjectContext, codableSets: [codableSet]) {
+    codableSets.forEach() { cs in
+        let _ = GameSet(in: viewContext, from: cs)
+    }
+}
+
+
+struct jsonData: Codable {
+    let mechanics: [String]
+    let sets: [codableSet]
 }
 
 struct codableSet: Codable {
@@ -48,58 +102,13 @@ struct codableErrata: Codable {
     let errata: String
 }
 
-struct codableFaq: Codable {
-    let cardname: String
-    let question: String
-    let answer: String
-}
-
 struct codableClarification: Codable {
     let cardname: String
     let clarification: String
 }
 
-private func clearStore(in viewContext: NSManagedObjectContext) {
-    for entity in (try? viewContext.fetch(GameSet.fetchRequest())) ?? [] {viewContext.delete(entity)}
-    for entity in (try? viewContext.fetch(Faction.fetchRequest())) ?? [] {viewContext.delete(entity)}
-    for entity in (try? viewContext.fetch(Mechanic.fetchRequest())) ?? [] {viewContext.delete(entity)}
-    for entity in (try? viewContext.fetch(Modifier.fetchRequest())) ?? [] {viewContext.delete(entity)}
-    try? viewContext.save()
-}
-
-private func populateMechanics(in viewContext: NSManagedObjectContext) {
-    for name in mechanicNames {
-        let m = Mechanic(context: viewContext)
-        m.name_ = name
-        m.enabled = true
-    }
-}
-
-private func populateDataFromJson(in viewContext: NSManagedObjectContext) {
-    if let data = readLocalFile(fromFile: jsonFile) {
-        let codable_sets = ParseJson(fromJson: data)
-        codable_sets?.forEach() { cs in
-            let _ = GameSet(in: viewContext, from: cs)
-        }
-    }
-}
-
-private func readLocalFile(fromFile f: String) -> Data?{
-    let file = f.split(separator: ".")
-    if let filePath = Bundle.main.path(forResource: String(file[0]), ofType: String(file[1])) {
-        let fileUrl = URL(fileURLWithPath: filePath)
-        let data = try? Data(contentsOf: fileUrl)
-        return data
-    }
-    return nil
-}
-
-private func ParseJson(fromJson json: Data) -> [codableSet]? {
-    do {
-        let codables = try JSONDecoder().decode([codableSet].self, from: json)
-        return codables
-    } catch {
-        print("error: \(error)")
-    }
-    return nil
+struct codableFaq: Codable {
+    let cardname: String
+    let question: String
+    let answer: String
 }

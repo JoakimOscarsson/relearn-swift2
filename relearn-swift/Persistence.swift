@@ -27,11 +27,11 @@ struct PersistenceController {
 //            faction.enabled = false
 //        }
         
-        //Do a demo and disable a set: Check!!.
-        if let gameSet = try? context.fetch(GameSet.fetchRequest()).first {
-            print("Disabled set is: \(gameSet.name)")
-            gameSet.enabled = false
-        }
+//        //Do a demo and disable a set: Check!!.
+//        if let gameSet = try? context.fetch(GameSet.fetchRequest()).first {
+//            print("Disabled set is: \(gameSet.name)")
+//            gameSet.enabled = false
+//        }
         
 //        //Do a demo and disable a mechanic: Check!!
 //        if let mechanic = try? context.fetch(Mechanic.fetchRequest()).first {

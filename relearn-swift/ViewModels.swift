@@ -18,6 +18,18 @@ private let dateFormatter: DateFormatter = {
 extension GameSet {
     var name: String {get{name_!}}
     
+    func toggleAvailability(newValue: Bool) -> Void {
+        (self.modifiers?.allObjects as? [Modifier])?.forEach{ modifier in
+            (modifier.targets?.allObjects as? [Faction])?.forEach{ target in
+                if newValue {
+                    target.addToMechanics(modifier.mechanic!)
+                } else {
+                    target.removeFromMechanics(modifier.mechanic!)
+                }
+            }
+        }
+    }
+    
     convenience init(in viewContext: NSManagedObjectContext, from setStruct: codableSet) {
         self.init(context: viewContext)
         self.name_ = setStruct.name
@@ -54,13 +66,27 @@ extension GameSet {
             }
         }
     }
+    
+    static func fetchRequestAll() -> NSFetchRequest<GameSet> {
+        let request = GameSet.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \GameSet.date, ascending: true)]
+        return request
+    }
 }
 
 extension Mechanic {
+    var name: String {get{name_!}}
+    
     static func fetchRequestFor(mechanicWithName mechanic: String) -> NSFetchRequest<Mechanic> {
         let request = Mechanic.fetchRequest()
         request.predicate = NSPredicate(format: "name_ LIKE %@", mechanic)
         request.fetchLimit = 1
+        return request
+    }
+    
+    static func allFetchRequest() -> NSFetchRequest<Mechanic> {
+        let request = Mechanic.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "name_", ascending: true)]
         return request
     }
 }
@@ -93,6 +119,12 @@ extension Faction {
             NSPredicate(format: "gameSet.enabled == true"), // Set is enabled
             NSPredicate(format: "SUBQUERY(mechanics, $mech, $mech.enabled == true).@count == mechanics.@count"), // Mechanic is enabled
             NSPredicate(format: "enabled == true")])  // Faction is enabled
+        request.sortDescriptors = [NSSortDescriptor(key: "gameSet.date", ascending: true), NSSortDescriptor(key: "name_", ascending: true)]
+        return request
+    }
+    
+    static var allFactionsRequest: NSFetchRequest<Faction> {
+        let request = Faction.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "gameSet.date", ascending: true), NSSortDescriptor(key: "name_", ascending: true)]
         return request
     }
