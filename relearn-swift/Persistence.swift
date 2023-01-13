@@ -16,6 +16,12 @@ struct PersistenceController {
     static let shared = PersistenceController()
     
     static let populate: PersistenceController = {
+        let userData = UserDefaults.standard
+        if userData.integer(forKey: "numOfPlayers") == 0 {
+            
+        }
+        
+        
         let store = PersistenceController()
         let context = store.container.viewContext
         populateStore(in: context)

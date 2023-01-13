@@ -117,14 +117,108 @@ struct settingsView: View {
 //                            .onDisappear(){try? viewContext.save(); viewContext.refreshAllObjects()})
 //        }
 
+struct navView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    var body: some View {
+        NavigationSplitView {
+            List{
+                NavigationLink("Available sets", destination: setToggleListView().onDisappear() {
+                    try? viewContext.save(); viewContext.refreshAllObjects()
+                })
 
+                NavigationLink("Permitted mechanics", destination: mechanicsToggleListView().onDisappear() {
+                    try? viewContext.save(); viewContext.refreshAllObjects()
+                })
+
+                NavigationLink("Enabled factions", destination: factionListView().onDisappear() {
+                    try? viewContext.save(); viewContext.refreshAllObjects()
+                })
+            }
+        } detail: {
+            factionListView()
+        }
+    }
+}
+
+struct numOfPlayersView: View {
+    @ObservedObject var settings = Settings.shared
+    var body: some View {
+        HStack{
+            Text("Number of Players: \(settings.players)")
+            Spacer()
+            Text("+ -")
+        }
+    }
+}
+
+struct pickMethodView: View {
+    @ObservedObject var settings = Settings.shared
+    
+    var body: some View {
+            Picker("Method to pick teams", selection: $settings.pickMethod) {
+                ForEach(teamPickingMethod.allCases) { method in
+                    Text(method.rawValue)
+                }
+            }
+    }
+    
+//    @State var pickerSelection = UserDefaults.standard.string(forKey: "pickMethod")
+//    var body: some View {
+//        Picker("Team building method", selection: $pickerSelection) {
+//            ForEach(pickMethod.allCases) { method in
+//                Text(method.rawValue.capitalized).tag(Optional(method))
+//            }
+//        }.onReceive(pickerSelection){
+//            UserData.selectedPickMethod = pickMethod(rawValue: pickerSelection!)!
+//        }
+//    }
+}
+
+struct customView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    var body: some View {
+        GeometryReader { geometry in
+        
+            HStack(
+                spacing: 0.5
+            ){
+                NavigationStack {
+                    List{
+                        numOfPlayersView()
+                        pickMethodView()
+                        
+                        
+                        NavigationLink("Available sets", destination: setToggleListView().onDisappear() {
+                            try? viewContext.save(); viewContext.refreshAllObjects()
+                        })
+                        
+                        NavigationLink("Permitted mechanics", destination: mechanicsToggleListView().onDisappear() {
+                            try? viewContext.save(); viewContext.refreshAllObjects()
+                        })
+                        
+                        NavigationLink("Enabled factions", destination: factionListView().onDisappear() {
+                            try? viewContext.save(); viewContext.refreshAllObjects()
+                        })
+                    }
+                }.frame(width: geometry.size.width * 0.27)
+                factionListView()
+            }
+        }.background(Color(.lightGray))
+    }
+}
 
 
 struct DemoView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     var body: some View {
-        settingsView()
+        
+        customView()
+        
+//        navView()
+        
+        
+//        settingsView()
   
         
         
