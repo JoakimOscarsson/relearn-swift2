@@ -63,7 +63,7 @@ struct mechanicsToggleListView: View {
         }.navigationTitle("Mechanics")
     }
 }
-
+#warning("Make some generic view for the toggle list views")
 struct factionListView: View {
     @FetchRequest(fetchRequest: Faction.enabledFactionsRequest)
     private var factions: FetchedResults<Faction>
@@ -75,67 +75,13 @@ struct factionListView: View {
     }
 }
 
-struct settingsView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    var body: some View {
-        NavigationView {
-            Form {
-                Section(header: Text("Settings")){
-                    NavigationLink("Available sets", destination: setToggleListView().onDisappear() {
-                        try? viewContext.save(); viewContext.refreshAllObjects()
-                    })
-                    
-                    NavigationLink("Permitted mechanics", destination: mechanicsToggleListView().onDisappear() {
-                        try? viewContext.save(); viewContext.refreshAllObjects()
-                    })
-                    
-                    NavigationLink("Enabled factions", destination: factionListView().onDisappear() {
-                        try? viewContext.save(); viewContext.refreshAllObjects()
-                    })
-                }
-            }
-            EmptyView()
-        }
-        
-    }
-}
-
-//
-//        Section(header: Text("Smash Up sets")){
-//            NavigationLink("My sets", destination: ownedSetsView(showSettings: $showSettings)
-//                            .onDisappear(){try? viewContext.save(); viewContext.refreshAllObjects()})
-//        }
-
-struct navView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    var body: some View {
-        NavigationSplitView {
-            List{
-                NavigationLink("Available sets", destination: setToggleListView().onDisappear() {
-                    try? viewContext.save(); viewContext.refreshAllObjects()
-                })
-
-                NavigationLink("Permitted mechanics", destination: mechanicsToggleListView().onDisappear() {
-                    try? viewContext.save(); viewContext.refreshAllObjects()
-                })
-
-                NavigationLink("Enabled factions", destination: factionToggleListView().onDisappear() {
-                    try? viewContext.save(); viewContext.refreshAllObjects()
-                })
-            }
-        } detail: {
-            factionListView()
-        }
-    }
-}
-
 struct numOfPlayersView: View {
     @ObservedObject var settings = Settings.shared
     var body: some View {
         HStack{
             Stepper("Number of Players: \(settings.players)",
                     value: $settings.players,
-                    in: 2...4)
+                    in: 2...4) ; #warning("implement check to see if there are enought factions for specief number of players")
         }
     }
 }
@@ -147,7 +93,7 @@ struct poolSizeView: View {
     var body: some View {
         Stepper("Pool Size: \(settings.poolSize)",
                 value: $settings.poolSize,
-                in: 3...factions.count)
+                in: 3...factions.count) ; #warning("Implement change here if num of factions changes!")
     }
 }
 
@@ -161,87 +107,3 @@ struct pickMethodView: View {
             }
     }
 }
-
-struct customView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    @ObservedObject var settings = Settings.shared
-    var body: some View {
-        GeometryReader { geometry in
-        
-            HStack(
-                spacing: 0.5
-            ){
-                NavigationStack {
-                    Form{
-                        
-                        Section("Players"){
-                            List{
-                                numOfPlayersView()
-                            }
-                        }
-                        Section("Team selection"){
-                            List{
-                                pickMethodView()
-                                poolSizeView()
-                                    .disabled(settings.pickMethod != .pool)
-                                    .foregroundColor({return settings.pickMethod != .pool ? .gray : .black}())
-                            }
-                        }
-                        Section("Factions filtering"){
-                            NavigationLink("Available sets", destination: setToggleListView().onDisappear() {
-                                try? viewContext.save(); viewContext.refreshAllObjects()
-                            })
-                            
-                            NavigationLink("Permitted mechanics", destination: mechanicsToggleListView().onDisappear() {
-                                try? viewContext.save(); viewContext.refreshAllObjects()
-                            })
-                            
-                            NavigationLink("Enabled factions", destination: factionToggleListView().onDisappear() {
-                                try? viewContext.save(); viewContext.refreshAllObjects()
-                            })
-                        }
-                    }
-                    .navigationTitle("Options")
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarLeading) {
-                            Button(action: closeNav) {
-                                Label("Close", systemImage: "xmark")
-                            }
-                        }
-                    }
-                }.frame(width: geometry.size.width * 0.27)
-                factionListView()
-            }
-        }.background(Color(.lightGray))
-    }
-    private func closeNav(){
-        
-    }
-}
-
-
-struct DemoView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    var body: some View {
-        
-        customView()
-        
-//        navView()
-        
-        
-//        settingsView()
-  
-        
-        
-//        NavigationView {
-//            setToggleListView()
-//            //factionToggleListView()
-//            factionListView()
-//        }
-    }
-}
-
-
-
-

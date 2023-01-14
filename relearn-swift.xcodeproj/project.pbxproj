@@ -43,7 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5558F2A42971D222007DFA31 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserData.swift; path = "relearn-swift/UserData.swift"; sourceTree = "<group>"; };
+		5558F2A42971D222007DFA31 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		5558F2A62972AAF2007DFA31 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		5558F2A82972BD43007DFA31 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = SOURCE_ROOT; };
 		55F71057296B5C0F00A16C61 /* relearn-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "relearn-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,11 +89,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5558F2AA29733DD5007DFA31 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				55F71092296D7B1B00A16C61 /* data.json */,
+				55F71063296B5C1000A16C61 /* Persistence.swift */,
+				55F71096296F6D9400A16C61 /* StorePopulation.swift */,
+				5558F2A42971D222007DFA31 /* UserData.swift */,
+				55F71065296B5C1000A16C61 /* relearn_swift.xcdatamodeld */,
+				55F7105E296B5C1000A16C61 /* Assets.xcassets */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5558F2AB29733DEF007DFA31 /* Model extensions */ = {
+			isa = PBXGroup;
+			children = (
+				55F71094296F667000A16C61 /* ViewModels.swift */,
+			);
+			path = "Model extensions";
+			sourceTree = "<group>";
+		};
 		55F7104E296B5C0F00A16C61 = {
 			isa = PBXGroup;
 			children = (
-				5558F2A62972AAF2007DFA31 /* Views.swift */,
-				5558F2A42971D222007DFA31 /* UserData.swift */,
 				55F71059296B5C0F00A16C61 /* relearn-swift */,
 				55F7106F296B5C1000A16C61 /* relearn-swiftTests */,
 				55F71079296B5C1000A16C61 /* relearn-swiftUITests */,
@@ -114,15 +133,10 @@
 		55F71059296B5C0F00A16C61 /* relearn-swift */ = {
 			isa = PBXGroup;
 			children = (
-				55F71092296D7B1B00A16C61 /* data.json */,
-				55F71089296C25EB00A16C61 /* Views */,
 				55F7105A296B5C0F00A16C61 /* relearn_swiftApp.swift */,
-				55F7105C296B5C0F00A16C61 /* ContentView.swift */,
-				55F7105E296B5C1000A16C61 /* Assets.xcassets */,
-				55F71063296B5C1000A16C61 /* Persistence.swift */,
-				55F71096296F6D9400A16C61 /* StorePopulation.swift */,
-				55F71094296F667000A16C61 /* ViewModels.swift */,
-				55F71065296B5C1000A16C61 /* relearn_swift.xcdatamodeld */,
+				5558F2AB29733DEF007DFA31 /* Model extensions */,
+				5558F2AA29733DD5007DFA31 /* Models */,
+				55F71089296C25EB00A16C61 /* Views */,
 				55F71060296B5C1000A16C61 /* Preview Content */,
 			);
 			path = "relearn-swift";
@@ -156,6 +170,8 @@
 		55F71089296C25EB00A16C61 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				55F7105C296B5C0F00A16C61 /* ContentView.swift */,
+				5558F2A62972AAF2007DFA31 /* Views.swift */,
 				5558F2A82972BD43007DFA31 /* MainView.swift */,
 				55F71090296C2A5400A16C61 /* DemoView.swift */,
 			);

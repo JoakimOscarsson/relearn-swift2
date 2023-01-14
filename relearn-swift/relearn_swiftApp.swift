@@ -14,12 +14,6 @@ struct relearn_swiftApp: App {
     var body: some Scene {
         WindowGroup {
             MainView().environment(\.managedObjectContext, persistenceController.container.viewContext)
-            //DemoView().environment(\.managedObjectContext, persistenceController.container.viewContext)
-            
-            /*
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            */
         }
     }
 }
