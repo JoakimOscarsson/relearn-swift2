@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5558F2A52971D222007DFA31 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2A42971D222007DFA31 /* UserData.swift */; };
+		5558F2A72972AAF2007DFA31 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2A62972AAF2007DFA31 /* Views.swift */; };
+		5558F2A92972BD43007DFA31 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2A82972BD43007DFA31 /* MainView.swift */; };
 		55F7105B296B5C0F00A16C61 /* relearn_swiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F7105A296B5C0F00A16C61 /* relearn_swiftApp.swift */; };
 		55F7105D296B5C0F00A16C61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F7105C296B5C0F00A16C61 /* ContentView.swift */; };
 		55F7105F296B5C1000A16C61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F7105E296B5C1000A16C61 /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		5558F2A42971D222007DFA31 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserData.swift; path = "relearn-swift/UserData.swift"; sourceTree = "<group>"; };
+		5558F2A62972AAF2007DFA31 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		5558F2A82972BD43007DFA31 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = SOURCE_ROOT; };
 		55F71057296B5C0F00A16C61 /* relearn-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "relearn-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F7105A296B5C0F00A16C61 /* relearn_swiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = relearn_swiftApp.swift; sourceTree = "<group>"; };
 		55F7105C296B5C0F00A16C61 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 		55F7104E296B5C0F00A16C61 = {
 			isa = PBXGroup;
 			children = (
+				5558F2A62972AAF2007DFA31 /* Views.swift */,
 				5558F2A42971D222007DFA31 /* UserData.swift */,
 				55F71059296B5C0F00A16C61 /* relearn-swift */,
 				55F7106F296B5C1000A16C61 /* relearn-swiftTests */,
@@ -151,6 +156,7 @@
 		55F71089296C25EB00A16C61 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5558F2A82972BD43007DFA31 /* MainView.swift */,
 				55F71090296C2A5400A16C61 /* DemoView.swift */,
 			);
 			path = Views;
@@ -290,11 +296,13 @@
 				55F71097296F6D9400A16C61 /* StorePopulation.swift in Sources */,
 				55F71095296F667000A16C61 /* ViewModels.swift in Sources */,
 				5558F2A52971D222007DFA31 /* UserData.swift in Sources */,
+				5558F2A92972BD43007DFA31 /* MainView.swift in Sources */,
 				55F71064296B5C1000A16C61 /* Persistence.swift in Sources */,
 				55F7105D296B5C0F00A16C61 /* ContentView.swift in Sources */,
 				55F7105B296B5C0F00A16C61 /* relearn_swiftApp.swift in Sources */,
 				55F71091296C2A5400A16C61 /* DemoView.swift in Sources */,
 				55F71067296B5C1000A16C61 /* relearn_swift.xcdatamodeld in Sources */,
+				5558F2A72972AAF2007DFA31 /* Views.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

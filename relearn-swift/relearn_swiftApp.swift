@@ -9,17 +9,17 @@ import SwiftUI
 
 @main
 struct relearn_swiftApp: App {
-    //let persistenceController = PersistenceController.shared
-    let persistenceController = PersistenceController.populate
-//    let userData = UserData() //Init userdata
+    let persistenceController = PersistenceController.shared
+    //let persistenceController = PersistenceController.populate
     var body: some Scene {
         WindowGroup {
-            DemoView().environment(\.managedObjectContext, persistenceController.container.viewContext)
+            MainView().environment(\.managedObjectContext, persistenceController.container.viewContext)
+            //DemoView().environment(\.managedObjectContext, persistenceController.container.viewContext)
             
             /*
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
-             */
+            */
         }
     }
 }

@@ -20,32 +20,10 @@ struct PersistenceController {
         if userData.integer(forKey: "numOfPlayers") == 0 {
             
         }
-        
-        
         let store = PersistenceController()
         let context = store.container.viewContext
         populateStore(in: context)
-        
-        #warning("Clean up")
-//        //Do a demo and disable singel faction: Check!!.
-//        if let faction = try? context.fetch(Faction.fetchRequest()).first {
-//            print("Disabled faction is: \(faction.name)")
-//            faction.enabled = false
-//        }
-        
-//        //Do a demo and disable a set: Check!!.
-//        if let gameSet = try? context.fetch(GameSet.fetchRequest()).first {
-//            print("Disabled set is: \(gameSet.name)")
-//            gameSet.enabled = false
-//        }
-        
-//        //Do a demo and disable a mechanic: Check!!
-//        if let mechanic = try? context.fetch(Mechanic.fetchRequest()).first {
-//            print("Disabled mechanic is: \(mechanic.name_ ?? "Error: Mechanic is missing!")")
-//            mechanic.enabled = false
-//        }
-        
-        
+                
         try? context.save()
         return store
     }()
@@ -53,18 +31,13 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-//        for _ in 0..<10 {
-//            let newItem = Item(context: viewContext)
-//            newItem.timestamp = Date()
-//        }
-//        do {
-//            try viewContext.save()
-//        } catch {
-//            // Replace this implementation with code to handle the error appropriately.
-//            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//            let nsError = error as NSError
-//            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//        }
+        populateStoreWithMockData(in: viewContext)
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
         return result
     }()
 

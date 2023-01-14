@@ -23,6 +23,20 @@ func populateStore(in viewContext: NSManagedObjectContext) {
     }
 }
 
+func populateStoreWithMockData(in viewContext: NSManagedObjectContext) {
+    let mockSet = codableSet(name: "Core Set", description: "The Core set", date: "2022-01-01", bases: nil, factions: [
+            codableFaction(name: "Aliens", image: "Aliens", description: "A faction of Aiens", overview: nil, bases: nil, mechanics: nil, erratas: nil, clarifications: nil, faq: nil),
+            codableFaction(name: "Dinosaurs", image: "Dinosaurs", description: "A faction of Dinosaurs", overview: nil, bases: nil, mechanics: nil, erratas: nil, clarifications: nil, faq: nil),
+            codableFaction(name: "Pirates", image: "Pirates", description: "A faction of Pirates", overview: nil, bases: nil, mechanics: nil, erratas: nil, clarifications: nil, faq: nil),
+            codableFaction(name: "Wizards", image: "Wizards", description: "A faction of Wizards", overview: nil, bases: nil, mechanics: nil, erratas: nil, clarifications: nil, faq: nil),
+            codableFaction(name: "Zombies", image: "Zombies", description: "A faction of Zombies", overview: nil, bases: nil, mechanics: nil, erratas: nil, clarifications: nil, faq: nil),
+            codableFaction(name: "Tricksters", image: "Tricksters", description: "A faction of Tricksters", overview: nil, bases: nil, mechanics: nil, erratas: nil, clarifications: nil, faq: nil),
+            codableFaction(name: "Robots", image: "Robots", description: "A faction of Robots", overview: nil, bases: nil, mechanics: nil, erratas: nil, clarifications: nil, faq: nil),
+            codableFaction(name: "Ninjas", image: "Ninjas", description: "A faction of Ninjas", overview: nil, bases: nil, mechanics: nil, erratas: nil, clarifications: nil, faq: nil),
+    ], modifiers: nil)
+    let _ = GameSet(in: viewContext, from: mockSet)
+}
+
 func readLocalFile(fromFile f: String) -> Data?{
     let file = f.split(separator: ".")
     if let filePath = Bundle.main.path(forResource: String(file[0]), ofType: String(file[1])) {

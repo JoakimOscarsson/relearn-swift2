@@ -8,9 +8,9 @@
 import Foundation
 
 enum teamPickingMethod: String, CaseIterable, Identifiable {
-    case random
-    case pool
-    case manual
+    case manual = "Manually"
+    case random = "Randomly"
+    case pool = "From a pool"
     var id: Self { self }
 }
 
@@ -28,40 +28,18 @@ class Settings: ObservableObject {
         }
     }
 
-    var poolSize: Int {
+    @Published var poolSize: Int {
         didSet {
-            UserDefaults.standard.setValue(poolSize, forKey: "poolSize")
+            UserDefaults.standard.setValue(players, forKey: "poolSize")
         }
     }
+
 
     init() {
         let userDataPlayers = UserDefaults.standard.integer(forKey: "players")
         let userDataPoolSize = UserDefaults.standard.integer(forKey: "poolSize")
-        pickMethod = teamPickingMethod(rawValue: UserDefaults.standard.string(forKey: "pickMethod") ?? "random") ?? .random
+        pickMethod = teamPickingMethod(rawValue: UserDefaults.standard.string(forKey: "pickMethod") ?? "Manually") ?? .manual
         players = userDataPlayers != 0 ? userDataPlayers : 2
         poolSize = userDataPoolSize != 0 ? userDataPoolSize : 3
     }
 }
-
-//
-//struct UserData {
-//    init() {
-//        
-//    }
-//    
-//    static var players: Int {
-//        get {return UserDefaults.standard.integer(forKey: "players")}
-//        set {UserDefaults.standard.set(newValue, forKey: "players")}
-//    }
-//    static var poolSize: Int {
-//        get {return UserDefaults.standard.integer(forKey: "poolSize")}
-//        set {UserDefaults.standard.set(newValue, forKey: "poolSize")}
-//    }
-//    static var selectedPickMethod: pickMethod {
-//        get {return pickMethod(rawValue: UserDefaults.standard.string(forKey: "pickMethod")!)!}
-//        set {UserDefaults.standard.set(newValue.rawValue, forKey: "pickMethod")}
-//    }
-//    
-//}
-
-
