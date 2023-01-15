@@ -22,7 +22,8 @@ func populateStore(in viewContext: NSManagedObjectContext) {
             let _ = Mechanic(name: name, in: viewContext)
         }
         codableSets.forEach() { cs in
-            let _ = GameSet(in: viewContext, from: cs)
+            let gameSet = GameSet(in: viewContext, from: cs)
+            if gameSet.name == "Core Set" {gameSet.enabled = true}
         }
     }
 }
@@ -38,7 +39,9 @@ func populatePreview(in viewContext: NSManagedObjectContext) {
             codableFaction(name: "Robots", image: "Robots", description: "A faction of Robots"),
             codableFaction(name: "Ninjas", image: "Ninjas", description: "A faction of Ninjas"),
     ])
-    let _ = GameSet(in: viewContext, from: mockSet)
+    let gameSet = GameSet(in: viewContext, from: mockSet)
+    gameSet.enabled = true
+    
 }
 
 func readLocalFile(fromFile f: String) -> Data?{

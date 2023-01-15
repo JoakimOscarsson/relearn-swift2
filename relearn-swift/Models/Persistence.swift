@@ -9,10 +9,7 @@ import CoreData
 import SwiftUI
 
 
-
-
 struct PersistenceController {
-        
     static let shared = PersistenceController()
     
     static let populate: PersistenceController = {
@@ -27,7 +24,9 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let context = result.container.viewContext
+        print("Inited preview")
         populatePreview(in: context)
+        print("after populate")
         
         try? context.save()
         return result

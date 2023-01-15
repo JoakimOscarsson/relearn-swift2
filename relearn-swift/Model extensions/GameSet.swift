@@ -8,14 +8,7 @@
 import Foundation
 import CoreData
 
-private let dateFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy-MM-dd"
-    return formatter
-}()
 
-
-//ViewModels:
 extension GameSet {
     var name: String {get{name_!}}
         
@@ -46,7 +39,7 @@ extension GameSet {
         }
     }
     
-    func initModifiers(_ modifiers: [codableMechanicModifier], in viewContext: NSManagedObjectContext){
+    private func initModifiers(_ modifiers: [codableMechanicModifier], in viewContext: NSManagedObjectContext){
         for codableModifier in modifiers {
             let modifier = Modifier(context: viewContext)
             modifier.set = self
@@ -59,28 +52,8 @@ extension GameSet {
 }
 
 
-extension Mechanic {
-    var name: String {get{name_!}}
-    
-    convenience init(name: String, in viewContext: NSManagedObjectContext) {
-        self.init(context: viewContext)
-        self.name_ = name
-    }
-}
-
-
-extension Faction {
-    var name: String {get{name_!}}
-    
-    convenience init(in viewContext: NSManagedObjectContext, from factionStruct: codableFaction) {
-        self.init(context: viewContext)
-        self.name_ = factionStruct.name
-        self.info = factionStruct.description
-        self.image = factionStruct.image
-        try? factionStruct.mechanics?.forEach() { mechanicName in
-            if let mechanic = try viewContext.fetch(Mechanic.fetchRequestFor(mechanicWithName: mechanicName)).first {
-                self.addToMechanics(mechanic)
-            }
-        }
-    }
-}
+private let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
+    return formatter
+}()

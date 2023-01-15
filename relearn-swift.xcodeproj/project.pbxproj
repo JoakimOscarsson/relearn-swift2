@@ -13,6 +13,10 @@
 		5558F2AF297342D7007DFA31 /* CustomGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2AE297342D7007DFA31 /* CustomGridView.swift */; };
 		5558F2B129734675007DFA31 /* TeamAndFactionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2B029734675007DFA31 /* TeamAndFactionViews.swift */; };
 		5558F2B32973DF2C007DFA31 /* FetchRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2B22973DF2C007DFA31 /* FetchRequests.swift */; };
+		5558F2B52973F33F007DFA31 /* Mechanic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2B42973F33F007DFA31 /* Mechanic.swift */; };
+		5558F2B72973F376007DFA31 /* Faction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2B62973F376007DFA31 /* Faction.swift */; };
+		5558F2B92973F75A007DFA31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2B82973F75A007DFA31 /* ContentView.swift */; };
+		5558F2BF29740F8B007DFA31 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2BE29740F8B007DFA31 /* MenuView.swift */; };
 		55F7105B296B5C0F00A16C61 /* relearn_swiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F7105A296B5C0F00A16C61 /* relearn_swiftApp.swift */; };
 		55F7105F296B5C1000A16C61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F7105E296B5C1000A16C61 /* Assets.xcassets */; };
 		55F71062296B5C1000A16C61 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F71061296B5C1000A16C61 /* Preview Assets.xcassets */; };
@@ -21,9 +25,8 @@
 		55F71071296B5C1000A16C61 /* relearn_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F71070296B5C1000A16C61 /* relearn_swiftTests.swift */; };
 		55F7107B296B5C1000A16C61 /* relearn_swiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F7107A296B5C1000A16C61 /* relearn_swiftUITests.swift */; };
 		55F7107D296B5C1000A16C61 /* relearn_swiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F7107C296B5C1000A16C61 /* relearn_swiftUITestsLaunchTests.swift */; };
-		55F71091296C2A5400A16C61 /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F71090296C2A5400A16C61 /* DemoView.swift */; };
 		55F71093296D7B1B00A16C61 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 55F71092296D7B1B00A16C61 /* data.json */; };
-		55F71095296F667000A16C61 /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F71094296F667000A16C61 /* ViewModels.swift */; };
+		55F71095296F667000A16C61 /* GameSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F71094296F667000A16C61 /* GameSet.swift */; };
 		55F71097296F6D9400A16C61 /* StorePopulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F71096296F6D9400A16C61 /* StorePopulation.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,10 +50,14 @@
 /* Begin PBXFileReference section */
 		5558F2A42971D222007DFA31 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		5558F2A82972BD43007DFA31 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = SOURCE_ROOT; };
-		5558F2AC29733F83007DFA31 /* UIConsants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIConsants.swift; path = "relearn-swift/Models/UIConsants.swift"; sourceTree = SOURCE_ROOT; };
+		5558F2AC29733F83007DFA31 /* UIConsants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIConsants.swift; path = "relearn-swift/Views/UIConsants.swift"; sourceTree = SOURCE_ROOT; };
 		5558F2AE297342D7007DFA31 /* CustomGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGridView.swift; sourceTree = "<group>"; };
 		5558F2B029734675007DFA31 /* TeamAndFactionViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamAndFactionViews.swift; sourceTree = "<group>"; };
 		5558F2B22973DF2C007DFA31 /* FetchRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRequests.swift; sourceTree = "<group>"; };
+		5558F2B42973F33F007DFA31 /* Mechanic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mechanic.swift; sourceTree = "<group>"; };
+		5558F2B62973F376007DFA31 /* Faction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faction.swift; sourceTree = "<group>"; };
+		5558F2B82973F75A007DFA31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5558F2BE29740F8B007DFA31 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		55F71057296B5C0F00A16C61 /* relearn-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "relearn-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F7105A296B5C0F00A16C61 /* relearn_swiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = relearn_swiftApp.swift; sourceTree = "<group>"; };
 		55F7105E296B5C1000A16C61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,9 +69,8 @@
 		55F71076296B5C1000A16C61 /* relearn-swiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "relearn-swiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F7107A296B5C1000A16C61 /* relearn_swiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = relearn_swiftUITests.swift; sourceTree = "<group>"; };
 		55F7107C296B5C1000A16C61 /* relearn_swiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = relearn_swiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		55F71090296C2A5400A16C61 /* DemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoView.swift; sourceTree = "<group>"; };
 		55F71092296D7B1B00A16C61 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
-		55F71094296F667000A16C61 /* ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
+		55F71094296F667000A16C61 /* GameSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSet.swift; sourceTree = "<group>"; };
 		55F71096296F6D9400A16C61 /* StorePopulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePopulation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,13 +102,12 @@
 		5558F2AA29733DD5007DFA31 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				55F71092296D7B1B00A16C61 /* data.json */,
 				55F71063296B5C1000A16C61 /* Persistence.swift */,
-				55F71096296F6D9400A16C61 /* StorePopulation.swift */,
 				5558F2A42971D222007DFA31 /* UserData.swift */,
+				55F71096296F6D9400A16C61 /* StorePopulation.swift */,
 				55F71065296B5C1000A16C61 /* relearn_swift.xcdatamodeld */,
-				5558F2AC29733F83007DFA31 /* UIConsants.swift */,
 				55F7105E296B5C1000A16C61 /* Assets.xcassets */,
+				55F71092296D7B1B00A16C61 /* data.json */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -111,9 +116,29 @@
 			isa = PBXGroup;
 			children = (
 				5558F2B22973DF2C007DFA31 /* FetchRequests.swift */,
-				55F71094296F667000A16C61 /* ViewModels.swift */,
+				55F71094296F667000A16C61 /* GameSet.swift */,
+				5558F2B62973F376007DFA31 /* Faction.swift */,
+				5558F2B42973F33F007DFA31 /* Mechanic.swift */,
 			);
 			path = "Model extensions";
+			sourceTree = "<group>";
+		};
+		5558F2BC29740DA6007DFA31 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				5558F2B82973F75A007DFA31 /* ContentView.swift */,
+				5558F2B029734675007DFA31 /* TeamAndFactionViews.swift */,
+				5558F2AE297342D7007DFA31 /* CustomGridView.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		5558F2BD29740DB9007DFA31 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				5558F2BE29740F8B007DFA31 /* MenuView.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		55F7104E296B5C0F00A16C61 = {
@@ -177,9 +202,9 @@
 			isa = PBXGroup;
 			children = (
 				5558F2A82972BD43007DFA31 /* MainView.swift */,
-				5558F2B029734675007DFA31 /* TeamAndFactionViews.swift */,
-				5558F2AE297342D7007DFA31 /* CustomGridView.swift */,
-				55F71090296C2A5400A16C61 /* DemoView.swift */,
+				5558F2BD29740DB9007DFA31 /* Menu */,
+				5558F2BC29740DA6007DFA31 /* Content */,
+				5558F2AC29733F83007DFA31 /* UIConsants.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,14 +342,17 @@
 			files = (
 				5558F2B129734675007DFA31 /* TeamAndFactionViews.swift in Sources */,
 				55F71097296F6D9400A16C61 /* StorePopulation.swift in Sources */,
-				55F71095296F667000A16C61 /* ViewModels.swift in Sources */,
+				55F71095296F667000A16C61 /* GameSet.swift in Sources */,
 				5558F2A52971D222007DFA31 /* UserData.swift in Sources */,
+				5558F2B52973F33F007DFA31 /* Mechanic.swift in Sources */,
 				5558F2AF297342D7007DFA31 /* CustomGridView.swift in Sources */,
+				5558F2B72973F376007DFA31 /* Faction.swift in Sources */,
 				5558F2A92972BD43007DFA31 /* MainView.swift in Sources */,
 				55F71064296B5C1000A16C61 /* Persistence.swift in Sources */,
 				55F7105B296B5C0F00A16C61 /* relearn_swiftApp.swift in Sources */,
+				5558F2BF29740F8B007DFA31 /* MenuView.swift in Sources */,
 				5558F2B32973DF2C007DFA31 /* FetchRequests.swift in Sources */,
-				55F71091296C2A5400A16C61 /* DemoView.swift in Sources */,
+				5558F2B92973F75A007DFA31 /* ContentView.swift in Sources */,
 				55F71067296B5C1000A16C61 /* relearn_swift.xcdatamodeld in Sources */,
 				5558F2AD29733F83007DFA31 /* UIConsants.swift in Sources */,
 			);
