@@ -16,28 +16,20 @@ struct PersistenceController {
     static let shared = PersistenceController()
     
     static let populate: PersistenceController = {
-        let userData = UserDefaults.standard
-        if userData.integer(forKey: "numOfPlayers") == 0 {
-            
-        }
         let store = PersistenceController()
         let context = store.container.viewContext
         populateStore(in: context)
                 
-        try? context.save()
+        try? context.save(); #warning("Does not handle errors!")
         return store
     }()
 
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
-        let viewContext = result.container.viewContext
-        populateStoreWithMockData(in: viewContext)
-        do {
-            try viewContext.save()
-        } catch {
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
+        let context = result.container.viewContext
+        populatePreview(in: context)
+        
+        try? context.save()
         return result
     }()
 

@@ -43,7 +43,7 @@ struct setToggleListView: View {
 }
 
 struct factionToggleListView: View {
-    @FetchRequest(fetchRequest: Faction.allFactionsRequest)
+    @FetchRequest(fetchRequest: Faction.enabledFactionsRequest)
     private var factions: FetchedResults<Faction>
     
     var body: some View {
@@ -55,7 +55,7 @@ struct factionToggleListView: View {
 
 struct mechanicsToggleListView: View {
     @FetchRequest(fetchRequest: Mechanic.allFetchRequest())
-    private var mechanics: FetchedResults<Mechanic>
+    private var mechanics: FetchedResults<Mechanic>;  #warning("why is this different from the Faction request? () vs nont using ()")
     
     var body: some View {
         List(mechanics) { mechanic in

@@ -636,7 +636,7 @@
             "date": "2019-08-01",
             "bases": "",
             "modifiers": [
-                {"modifier": "Titans", "modifies": [
+                {"mechanicName": "Titans", "targetFactionNames": [
                     "Vampires",
                     "Wizards",
                     "Tricksters",
@@ -654,7 +654,7 @@
                     "Time Travelers",
                     "Explorers"]
                 },
-                {"modifier": "Power-Counters", "modifies": [
+                {"mechanicName": "Power-Counters", "targetFactionNames": [
                     "Tricksters",
                     "Minions of Cthulhu",
                     "Bear Cavalry",
@@ -866,7 +866,7 @@
             "date": "2022-10-28",
             "bases": "",
             "modifiers": [
-                {"modifier": "Titans", "modifies": [
+                {"mechanicName": "Titans", "targetFactionNames": [
                     "Tornados",
                     "Dinosaurs",
                     "Grannies",
@@ -879,7 +879,7 @@
                     "Mad Scientists",
                     "Superheroes"]
                 },
-                {"modifier": "Power-Counters", "modifies": [
+                {"mechanicName": "Power-Counters", "targetFactionNames": [
                     "Tornados",
                     "Dinosaurs",
                     "Killer Plants"]

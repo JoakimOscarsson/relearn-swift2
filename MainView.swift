@@ -7,11 +7,20 @@
 
 import SwiftUI
 
-
+struct tmp: Identifiable {
+    var id = UUID()
+}
 
 struct ContentView: View {
+    let test = [Team(id: "player 1"), Team(id: "player 2"), Team(id: "player 3")]
     var body: some View {
-        Color.red
+        ZStack{
+            CustomColors.appBackground
+            CustomGridView(items: test){team in
+                TeamView(team: team)
+            }
+        }
+        
         
     }
 }
@@ -21,7 +30,11 @@ struct MainView: View {
     var body: some View {
         GeometryReader(){ geometry in
             ZStack{
-                ContentView().ignoresSafeArea(.all)
+                VStack{
+                    Spacer()
+                    ContentView().ignoresSafeArea(.all)
+                    
+                }
                 if !menuOpen { //TODO: When button is in menu, always show it.
                     Button(action: {
                         self.menuOpen.toggle()

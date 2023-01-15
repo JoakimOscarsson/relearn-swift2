@@ -14,26 +14,30 @@ let jsonFile = "data.json"
 func populateStore(in viewContext: NSManagedObjectContext) {
     if let data = readLocalFile(fromFile: jsonFile) {
         let json = parseJson(fromJson: data)
-        guard let mechanics = json?.0 else { return }
-        guard let sets = json?.1 else { return }
+        let mechanicNames = json!.0
+        let codableSets = json!.1
         
         clearStore(in: viewContext)
-        populateMechanics(in: viewContext, mechanicNames: mechanics)
-        populateData(in: viewContext, codableSets: sets)
+        for name in mechanicNames {
+            let _ = Mechanic(name: name, in: viewContext)
+        }
+        codableSets.forEach() { cs in
+            let _ = GameSet(in: viewContext, from: cs)
+        }
     }
 }
 
-func populateStoreWithMockData(in viewContext: NSManagedObjectContext) {
-    let mockSet = codableSet(name: "Core Set", description: "The Core set", date: "2022-01-01", bases: nil, factions: [
-            codableFaction(name: "Aliens", image: "Aliens", description: "A faction of Aiens", overview: nil, bases: nil, mechanics: nil, erratas: nil, clarifications: nil, faq: nil),
-            codableFaction(name: "Dinosaurs", image: "Dinosaurs", description: "A faction of Dinosaurs", overview: nil, bases: nil, mechanics: nil, erratas: nil, clarifications: nil, faq: nil),
-            codableFaction(name: "Pirates", image: "Pirates", description: "A faction of Pirates", overview: nil, bases: nil, mechanics: nil, erratas: nil, clarifications: nil, faq: nil),
-            codableFaction(name: "Wizards", image: "Wizards", description: "A faction of Wizards", overview: nil, bases: nil, mechanics: nil, erratas: nil, clarifications: nil, faq: nil),
-            codableFaction(name: "Zombies", image: "Zombies", description: "A faction of Zombies", overview: nil, bases: nil, mechanics: nil, erratas: nil, clarifications: nil, faq: nil),
-            codableFaction(name: "Tricksters", image: "Tricksters", description: "A faction of Tricksters", overview: nil, bases: nil, mechanics: nil, erratas: nil, clarifications: nil, faq: nil),
-            codableFaction(name: "Robots", image: "Robots", description: "A faction of Robots", overview: nil, bases: nil, mechanics: nil, erratas: nil, clarifications: nil, faq: nil),
-            codableFaction(name: "Ninjas", image: "Ninjas", description: "A faction of Ninjas", overview: nil, bases: nil, mechanics: nil, erratas: nil, clarifications: nil, faq: nil),
-    ], modifiers: nil)
+func populatePreview(in viewContext: NSManagedObjectContext) {
+    let mockSet = codableSet(name: "Core Set", description: "The Core set", date: "2022-01-01", factions: [
+            codableFaction(name: "Aliens", image: "Aliens", description: "A faction of Aiens"),
+            codableFaction(name: "Dinosaurs", image: "Dinosaurs", description: "A faction of Dinosaurs"),
+            codableFaction(name: "Pirates", image: "Pirates", description: "A faction of Pirates"),
+            codableFaction(name: "Wizards", image: "Wizards", description: "A faction of Wizards"),
+            codableFaction(name: "Zombies", image: "Zombies", description: "A faction of Zombies"),
+            codableFaction(name: "Tricksters", image: "Tricksters", description: "A faction of Tricksters"),
+            codableFaction(name: "Robots", image: "Robots", description: "A faction of Robots"),
+            codableFaction(name: "Ninjas", image: "Ninjas", description: "A faction of Ninjas"),
+    ])
     let _ = GameSet(in: viewContext, from: mockSet)
 }
 
@@ -65,21 +69,6 @@ func clearStore(in viewContext: NSManagedObjectContext) {
     try? viewContext.save()
 }
 
-func populateMechanics(in viewContext: NSManagedObjectContext, mechanicNames: [String]) {
-    for name in mechanicNames {
-        let m = Mechanic(context: viewContext)
-        m.name_ = name
-        m.enabled = true
-    }
-}
-
-func populateData(in viewContext: NSManagedObjectContext, codableSets: [codableSet]) {
-    codableSets.forEach() { cs in
-        let _ = GameSet(in: viewContext, from: cs)
-    }
-}
-
-
 struct jsonData: Codable {
     let mechanics: [String]
     let sets: [codableSet]
@@ -91,7 +80,21 @@ struct codableSet: Codable {
     let date: String
     let bases: String?
     let factions: [codableFaction]?
-    let modifiers: [codableModifierSpec]?
+    let modifiers: [codableMechanicModifier]?
+    
+    init(name: String,
+         description : String,
+         date: String,
+         bases: String? = nil,
+         factions: [codableFaction]? = nil,
+         modifiers: [codableMechanicModifier]? = nil) {
+        self.name = name
+        self.description = description
+        self.date = date
+        self.bases = bases
+        self.factions = factions
+        self.modifiers = modifiers
+    }
 }
 
 struct codableFaction: Codable {
@@ -104,11 +107,31 @@ struct codableFaction: Codable {
     let erratas: [codableErrata]?
     let clarifications: [codableClarification]?
     let faq: [codableFaq]?
+    
+    init(name: String,
+         image: String,
+         description: String,
+         overview: String? = nil,
+         bases: String? = nil,
+         mechanics: [String]? = nil,
+         erratas: [codableErrata]? = nil,
+         clarifications: [codableClarification]? = nil,
+         faq: [codableFaq]? = nil) {
+        self.name = name
+        self.image = image
+        self.description = description
+        self.overview = overview
+        self.bases = bases
+        self.mechanics = mechanics
+        self.erratas = erratas
+        self.clarifications = clarifications
+        self.faq = faq
+    }
 }
 
-struct codableModifierSpec: Codable {
-    let modifier: String
-    let modifies: [String]
+struct codableMechanicModifier: Codable {
+    let mechanicName: String
+    let targetFactionNames: [String]
 }
 
 struct codableErrata: Codable {

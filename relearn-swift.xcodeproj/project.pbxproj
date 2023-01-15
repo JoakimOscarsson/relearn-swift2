@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		5558F2A52971D222007DFA31 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2A42971D222007DFA31 /* UserData.swift */; };
-		5558F2A72972AAF2007DFA31 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2A62972AAF2007DFA31 /* Views.swift */; };
 		5558F2A92972BD43007DFA31 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2A82972BD43007DFA31 /* MainView.swift */; };
+		5558F2AD29733F83007DFA31 /* UIConsants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2AC29733F83007DFA31 /* UIConsants.swift */; };
+		5558F2AF297342D7007DFA31 /* CustomGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2AE297342D7007DFA31 /* CustomGridView.swift */; };
+		5558F2B129734675007DFA31 /* TeamAndFactionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2B029734675007DFA31 /* TeamAndFactionViews.swift */; };
+		5558F2B32973DF2C007DFA31 /* FetchRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2B22973DF2C007DFA31 /* FetchRequests.swift */; };
 		55F7105B296B5C0F00A16C61 /* relearn_swiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F7105A296B5C0F00A16C61 /* relearn_swiftApp.swift */; };
-		55F7105D296B5C0F00A16C61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F7105C296B5C0F00A16C61 /* ContentView.swift */; };
 		55F7105F296B5C1000A16C61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F7105E296B5C1000A16C61 /* Assets.xcassets */; };
 		55F71062296B5C1000A16C61 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F71061296B5C1000A16C61 /* Preview Assets.xcassets */; };
 		55F71064296B5C1000A16C61 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F71063296B5C1000A16C61 /* Persistence.swift */; };
@@ -44,11 +46,13 @@
 
 /* Begin PBXFileReference section */
 		5558F2A42971D222007DFA31 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		5558F2A62972AAF2007DFA31 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		5558F2A82972BD43007DFA31 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = SOURCE_ROOT; };
+		5558F2AC29733F83007DFA31 /* UIConsants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIConsants.swift; path = "relearn-swift/Models/UIConsants.swift"; sourceTree = SOURCE_ROOT; };
+		5558F2AE297342D7007DFA31 /* CustomGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGridView.swift; sourceTree = "<group>"; };
+		5558F2B029734675007DFA31 /* TeamAndFactionViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamAndFactionViews.swift; sourceTree = "<group>"; };
+		5558F2B22973DF2C007DFA31 /* FetchRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRequests.swift; sourceTree = "<group>"; };
 		55F71057296B5C0F00A16C61 /* relearn-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "relearn-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F7105A296B5C0F00A16C61 /* relearn_swiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = relearn_swiftApp.swift; sourceTree = "<group>"; };
-		55F7105C296B5C0F00A16C61 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		55F7105E296B5C1000A16C61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55F71061296B5C1000A16C61 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		55F71063296B5C1000A16C61 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 				55F71096296F6D9400A16C61 /* StorePopulation.swift */,
 				5558F2A42971D222007DFA31 /* UserData.swift */,
 				55F71065296B5C1000A16C61 /* relearn_swift.xcdatamodeld */,
+				5558F2AC29733F83007DFA31 /* UIConsants.swift */,
 				55F7105E296B5C1000A16C61 /* Assets.xcassets */,
 			);
 			path = Models;
@@ -105,6 +110,7 @@
 		5558F2AB29733DEF007DFA31 /* Model extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5558F2B22973DF2C007DFA31 /* FetchRequests.swift */,
 				55F71094296F667000A16C61 /* ViewModels.swift */,
 			);
 			path = "Model extensions";
@@ -170,9 +176,9 @@
 		55F71089296C25EB00A16C61 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				55F7105C296B5C0F00A16C61 /* ContentView.swift */,
-				5558F2A62972AAF2007DFA31 /* Views.swift */,
 				5558F2A82972BD43007DFA31 /* MainView.swift */,
+				5558F2B029734675007DFA31 /* TeamAndFactionViews.swift */,
+				5558F2AE297342D7007DFA31 /* CustomGridView.swift */,
 				55F71090296C2A5400A16C61 /* DemoView.swift */,
 			);
 			path = Views;
@@ -309,16 +315,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5558F2B129734675007DFA31 /* TeamAndFactionViews.swift in Sources */,
 				55F71097296F6D9400A16C61 /* StorePopulation.swift in Sources */,
 				55F71095296F667000A16C61 /* ViewModels.swift in Sources */,
 				5558F2A52971D222007DFA31 /* UserData.swift in Sources */,
+				5558F2AF297342D7007DFA31 /* CustomGridView.swift in Sources */,
 				5558F2A92972BD43007DFA31 /* MainView.swift in Sources */,
 				55F71064296B5C1000A16C61 /* Persistence.swift in Sources */,
-				55F7105D296B5C0F00A16C61 /* ContentView.swift in Sources */,
 				55F7105B296B5C0F00A16C61 /* relearn_swiftApp.swift in Sources */,
+				5558F2B32973DF2C007DFA31 /* FetchRequests.swift in Sources */,
 				55F71091296C2A5400A16C61 /* DemoView.swift in Sources */,
 				55F71067296B5C1000A16C61 /* relearn_swift.xcdatamodeld in Sources */,
-				5558F2A72972AAF2007DFA31 /* Views.swift in Sources */,
+				5558F2AD29733F83007DFA31 /* UIConsants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
