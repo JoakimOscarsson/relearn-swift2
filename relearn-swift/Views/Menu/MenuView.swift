@@ -6,6 +6,16 @@
 //
 
 import SwiftUI
+import CoreData
+
+extension View {
+    func saveOnDisappear(context: NSManagedObjectContext) -> some View {
+        self.onDisappear(){
+            try? context.save()
+            context.refreshAllObjects()
+        }
+    }
+}
 
 struct MenuContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -15,30 +25,19 @@ struct MenuContentView: View {
     var body: some View {
         Form{
             Section("Players"){
-                List{
-                    numOfPlayersView()
-                }
+                List{numOfPlayersRow()}
             }
             Section("Team selection"){
                 List{
-                    pickMethodView()
-                    poolSizeView()
-                        .disabled(settings.pickMethod != .pool)
-                        .foregroundColor({return settings.pickMethod != .pool ? .gray : .black}())
+                    pickMethodRow()
+                    poolSizeRow()
+                        .enableOnPool()
                 }
             }
             Section("Factions filtering"){
-                NavigationLink("Available sets", destination: setToggleListView().onDisappear() {
-                    try? viewContext.save(); viewContext.refreshAllObjects()
-                })
-
-                NavigationLink("Permitted mechanics", destination: mechanicsToggleListView().onDisappear() {
-                    try? viewContext.save(); viewContext.refreshAllObjects()
-                })
-
-                NavigationLink("Enabled factions", destination: factionToggleListView().onDisappear() {
-                    try? viewContext.save(); viewContext.refreshAllObjects()
-                })
+                NavigationLink("Available sets", destination: setMenuView().saveOnDisappear(context: viewContext))
+                NavigationLink("Permitted mechanics", destination: mechanicsMenuView().saveOnDisappear(context: viewContext))
+                NavigationLink("Enabled factions", destination: factionMenuView().saveOnDisappear(context: viewContext))
             }
         }
         .navigationTitle("Options")
@@ -47,6 +46,12 @@ struct MenuContentView: View {
                 Button(action: {menuOpen.toggle()}) {Image(systemName: "sidebar.left")}
             }
         }
+    }
+    func poolSizeDisabled() -> Bool {
+        return settings.pickMethod != .pool
+    }
+    func poolSizeColor() -> Color {
+        return settings.pickMethod != .pool ? .gray : .black
     }
 }
 
@@ -83,86 +88,19 @@ struct MenuView: View {
     }
 }
 
-
-#warning("Make some generic view for toggleviews")
-struct setToggleView: View {
-    @ObservedObject var gameSet: GameSet
-    var body: some View {
-        Toggle(isOn: $gameSet.enabled) {
-            Text(gameSet.name)
-        }.onChange(of: gameSet.enabled){ newValue in gameSet.toggleAvailability(newValue: newValue) }
-    }
-}
-
-struct factionToggleView: View {
-    @ObservedObject var faction: Faction
-    var body: some View {
-        Toggle(isOn: $faction.enabled) {Text(faction.name)}
-    }
-}
-
-struct mechanicToggleView: View {
-    @ObservedObject var mechanic: Mechanic
-    var body: some View {
-        Toggle(isOn: $mechanic.enabled) {Text(mechanic.name)}
-    }
-}
-
-struct setToggleListView: View {
-    @FetchRequest(fetchRequest: GameSet.fetchRequestAll()) private var sets: FetchedResults<GameSet>
-    
-    var body: some View {
-        List(sets) { set in
-            setToggleView(gameSet: set)
-        }.navigationTitle("Sets")
-    }
-}
-
-struct factionToggleListView: View {
-    @FetchRequest(fetchRequest: Faction.allFactionsRequest) //TODO: Intorduce separate list of disabled factions due to various reasons
-    private var factions: FetchedResults<Faction>
-    
-    var body: some View {
-        List(factions) { faction in
-            factionToggleView(faction: faction)
-        }.navigationTitle("Factions")
-    }
-}
-
-struct mechanicsToggleListView: View {
-    @FetchRequest(fetchRequest: Mechanic.allFetchRequest())
-    private var mechanics: FetchedResults<Mechanic>;  #warning("why is this different from the Faction request? () vs nont using ()")
-    
-    var body: some View {
-        List(mechanics) { mechanic in
-            mechanicToggleView(mechanic: mechanic)
-        }.navigationTitle("Mechanics")
-    }
-}
-#warning("Make some generic view for the toggle list views")
-struct factionListView: View {
-    @FetchRequest(fetchRequest: Faction.enabledFactionsRequest)
-    private var factions: FetchedResults<Faction>
-    
-    var body: some View {
-        List(factions) { faction in
-            Text(faction.name)
-        }
-    }
-}
-
-struct numOfPlayersView: View {
+struct numOfPlayersRow: View {
     @ObservedObject var settings = Settings.shared
     var body: some View {
         HStack{
             Stepper("Number of Players: \(settings.players)",
                     value: $settings.players,
-                    in: 2...4) ; #warning("implement check to see if there are enought factions for specief number of players")
+                    in: 2...4)
+#warning("On trying to pick teams: implement check to see if there are enought factions for specief number of players.")
         }
     }
 }
 
-struct poolSizeView: View {
+struct poolSizeRow: View {
     @FetchRequest(fetchRequest: Faction.enabledFactionsRequest)
     private var factions: FetchedResults<Faction>
     @ObservedObject var settings = Settings.shared
@@ -176,9 +114,15 @@ struct poolSizeView: View {
     private var minValue: Int {
         return (factions.count >= 3 ? 3 : 0)
     }
+    
+    func enableOnPool() -> some View {
+        self
+            .disabled(settings.pickMethod != .pool)
+            .foregroundColor(settings.pickMethod != .pool ? .gray : .black)
+    }
 }
 
-struct pickMethodView: View {
+struct pickMethodRow: View {
     @ObservedObject var settings = Settings.shared
     var body: some View {
             Picker("Pick teams", selection: $settings.pickMethod) {

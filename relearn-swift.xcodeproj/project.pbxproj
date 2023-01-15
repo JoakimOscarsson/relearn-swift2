@@ -17,6 +17,9 @@
 		5558F2B72973F376007DFA31 /* Faction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2B62973F376007DFA31 /* Faction.swift */; };
 		5558F2B92973F75A007DFA31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2B82973F75A007DFA31 /* ContentView.swift */; };
 		5558F2BF29740F8B007DFA31 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2BE29740F8B007DFA31 /* MenuView.swift */; };
+		5558F2C129749588007DFA31 /* setMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2C029749587007DFA31 /* setMenuView.swift */; };
+		5558F2C329749698007DFA31 /* mechanicsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2C229749698007DFA31 /* mechanicsMenuView.swift */; };
+		5558F2C5297497D5007DFA31 /* factionMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2C4297497D5007DFA31 /* factionMenuView.swift */; };
 		55F7105B296B5C0F00A16C61 /* relearn_swiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F7105A296B5C0F00A16C61 /* relearn_swiftApp.swift */; };
 		55F7105F296B5C1000A16C61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F7105E296B5C1000A16C61 /* Assets.xcassets */; };
 		55F71062296B5C1000A16C61 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F71061296B5C1000A16C61 /* Preview Assets.xcassets */; };
@@ -58,6 +61,9 @@
 		5558F2B62973F376007DFA31 /* Faction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faction.swift; sourceTree = "<group>"; };
 		5558F2B82973F75A007DFA31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5558F2BE29740F8B007DFA31 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		5558F2C029749587007DFA31 /* setMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setMenuView.swift; sourceTree = "<group>"; };
+		5558F2C229749698007DFA31 /* mechanicsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mechanicsMenuView.swift; sourceTree = "<group>"; };
+		5558F2C4297497D5007DFA31 /* factionMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = factionMenuView.swift; sourceTree = "<group>"; };
 		55F71057296B5C0F00A16C61 /* relearn-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "relearn-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F7105A296B5C0F00A16C61 /* relearn_swiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = relearn_swiftApp.swift; sourceTree = "<group>"; };
 		55F7105E296B5C1000A16C61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -137,6 +143,9 @@
 			isa = PBXGroup;
 			children = (
 				5558F2BE29740F8B007DFA31 /* MenuView.swift */,
+				5558F2C229749698007DFA31 /* mechanicsMenuView.swift */,
+				5558F2C4297497D5007DFA31 /* factionMenuView.swift */,
+				5558F2C029749587007DFA31 /* setMenuView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -348,12 +357,15 @@
 				5558F2AF297342D7007DFA31 /* CustomGridView.swift in Sources */,
 				5558F2B72973F376007DFA31 /* Faction.swift in Sources */,
 				5558F2A92972BD43007DFA31 /* MainView.swift in Sources */,
+				5558F2C129749588007DFA31 /* setMenuView.swift in Sources */,
 				55F71064296B5C1000A16C61 /* Persistence.swift in Sources */,
 				55F7105B296B5C0F00A16C61 /* relearn_swiftApp.swift in Sources */,
+				5558F2C329749698007DFA31 /* mechanicsMenuView.swift in Sources */,
 				5558F2BF29740F8B007DFA31 /* MenuView.swift in Sources */,
 				5558F2B32973DF2C007DFA31 /* FetchRequests.swift in Sources */,
 				5558F2B92973F75A007DFA31 /* ContentView.swift in Sources */,
 				55F71067296B5C1000A16C61 /* relearn_swift.xcdatamodeld in Sources */,
+				5558F2C5297497D5007DFA31 /* factionMenuView.swift in Sources */,
 				5558F2AD29733F83007DFA31 /* UIConsants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,16 +12,7 @@ struct MainView: View {
     var body: some View {
         GeometryReader(){ geometry in
             ZStack{
-                ContentView()
-                
-                if !menuOpen { //TODO: When button is in menu, always show it.
-                    Button(action: {
-                        self.menuOpen.toggle()
-                    }, label: {
-                        Image(systemName: "sidebar.left")}
-                    )
-                }
-
+                ContentView(menuOpen: $menuOpen)
                 MenuView(menuOpen: $menuOpen, width: geometry.size.width*0.3)
             }.ignoresSafeArea(.all)
         }
