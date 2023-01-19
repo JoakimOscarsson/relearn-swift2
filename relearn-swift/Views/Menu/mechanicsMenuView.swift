@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct mechanicsMenuView: View {
-    @FetchRequest(fetchRequest: Mechanic.relevantFetchRequest)
+    @FetchRequest(fetchRequest: Mechanic.fetchRequests.available)
     private var mechanics: FetchedResults<Mechanic>;
     
     var body: some View {

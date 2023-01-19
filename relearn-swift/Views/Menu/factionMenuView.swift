@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct factionMenuView: View {
-    @FetchRequest(fetchRequest: Faction.possibleFactionsRequest)
+    @FetchRequest(fetchRequest: Faction.fetchRequests.availablePermitted)
     private var factions: FetchedResults<Faction>
     
-    @FetchRequest(fetchRequest: Faction.disabledDueToMechanicsRequest)
+    @FetchRequest(fetchRequest: Faction.fetchRequests.availableNotPermitted)
     private var noMechFactions: FetchedResults<Faction>
     
-    @FetchRequest(fetchRequest: Faction.disabledDueToSetsRequest)
+    @FetchRequest(fetchRequest: Faction.fetchRequests.notAvailable)
     private var noSetFactions: FetchedResults<Faction>
     
     var body: some View {
-        //Toggle a faction to disable it
+        #warning("Look into making a viewbuilder to get conditional sections?")
         Form {
             Section(content: {
                 List(factions, rowContent: factionToggleRow.init)
@@ -43,9 +43,6 @@ struct factionMenuView: View {
             }, footer: {
                 Text("You can specify set availability in the sets menu.")
             }).navigationTitle("Factions")
-            //Factions containing forbidden mechanics. You can permit mechanics in the mechanics menu.
-            
-            //Factions in unavailable sets. You can specify set availability in the sets menu.
         }
     }
 }

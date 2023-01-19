@@ -17,7 +17,7 @@ extension Faction {
         self.info = factionStruct.description
         self.image = factionStruct.image
         try? factionStruct.mechanics?.forEach() { mechanicName in
-            if let mechanic = try viewContext.fetch(Mechanic.fetchRequestFor(mechanicWithName: mechanicName)).first {
+            if let mechanic = try viewContext.fetch(Mechanic.fetchRequests.withName(name: mechanicName)).first {
                 self.addToMechanics(mechanic)
             }
         }

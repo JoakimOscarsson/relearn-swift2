@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct setMenuView: View {
-    @FetchRequest(fetchRequest: GameSet.fetchRequestAll) private var sets: FetchedResults<GameSet>
+    @FetchRequest(fetchRequest: GameSet.fetchRequests.all) private var sets: FetchedResults<GameSet>
     
     var body: some View {
         List(sets, rowContent: setToggleRow.init)

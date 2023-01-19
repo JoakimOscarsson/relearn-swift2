@@ -101,7 +101,7 @@ struct numOfPlayersRow: View {
 }
 
 struct poolSizeRow: View {
-    @FetchRequest(fetchRequest: Faction.enabledFactionsRequest)
+    @FetchRequest(fetchRequest: Faction.fetchRequests.availablePermittedEnabled)
     private var factions: FetchedResults<Faction>
     @ObservedObject var settings = Settings.shared
     var body: some View {

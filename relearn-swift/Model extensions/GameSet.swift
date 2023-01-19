@@ -43,9 +43,9 @@ extension GameSet {
         for codableModifier in modifiers {
             let modifier = Modifier(context: viewContext)
             modifier.set = self
-            modifier.mechanic = try! viewContext.fetch(Mechanic.fetchRequestFor(mechanicWithName: codableModifier.mechanicName)).first
+            modifier.mechanic = try! viewContext.fetch(Mechanic.fetchRequests.withName(name: codableModifier.mechanicName)).first
             for targetName in codableModifier.targetFactionNames {
-                modifier.addToTargets((try? viewContext.fetch(Faction.fetchRequestFor(factionWithName: targetName)).first)!)
+                modifier.addToTargets((try? viewContext.fetch(Faction.fetchRequests.withName(name: targetName)).first)!)
             }
         }
     }
