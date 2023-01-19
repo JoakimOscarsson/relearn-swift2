@@ -17,8 +17,7 @@ struct factionMenuView: View {
     @FetchRequest(fetchRequest: Faction.fetchRequests.notAvailable)
     private var noSetFactions: FetchedResults<Faction>
     
-    var body: some View {
-        #warning("Look into making a viewbuilder to get conditional sections?")
+    @ViewBuilder var body: some View {
         Form {
             Section(content: {
                 List(factions, rowContent: factionToggleRow.init)
@@ -28,21 +27,25 @@ struct factionMenuView: View {
                 Text("Disabled factions can not be selected when picking teams.")
             }).navigationTitle("Factions")
             
-            Section(content: {
-                List(noMechFactions, rowContent: factionNoToggleRow.init)
-            }, header: {
-                Text("Forbidden by Mechancis") //Alt: Forbidden by mechanics
-            }, footer: {
-                Text("You can permit mechanics in the mechanics menu.")
-            }).navigationTitle("Factions")
+            if noMechFactions.count > 0 {
+                Section(content: {
+                    List(noMechFactions, rowContent: factionNoToggleRow.init)
+                }, header: {
+                    Text("Forbidden by Mechancis") //Alt: Forbidden by mechanics
+                }, footer: {
+                    Text("You can permit mechanics in the mechanics menu.")
+                }).navigationTitle("Factions")
+            }
             
-            Section(content: {
-                List(noSetFactions, rowContent: factionNoToggleRow.init)
-            }, header: {
-                Text("In Unavailable Sets")
-            }, footer: {
-                Text("You can specify set availability in the sets menu.")
-            }).navigationTitle("Factions")
+            if noSetFactions.count > 0 {
+                Section(content: {
+                    List(noSetFactions, rowContent: factionNoToggleRow.init)
+                }, header: {
+                    Text("In Unavailable Sets")
+                }, footer: {
+                    Text("You can specify set availability in the sets menu.")
+                }).navigationTitle("Factions")
+            }
         }
     }
 }
