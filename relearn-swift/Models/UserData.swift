@@ -34,7 +34,6 @@ class Settings: ObservableObject {
         }
     }
 
-
     init() {
         let userDataPlayers = UserDefaults.standard.integer(forKey: "players")
         let userDataPoolSize = UserDefaults.standard.integer(forKey: "poolSize")

@@ -10,12 +10,10 @@ import SwiftUI
 struct MainView: View {
     @State var menuOpen = false
     var body: some View {
-        GeometryReader(){ geometry in
-            ZStack{
-                ContentView(menuOpen: $menuOpen)
-                MenuView(menuOpen: $menuOpen, width: geometry.size.width*0.3)
-            }.ignoresSafeArea(.all)
-        }
+        ZStack{
+            ContentView(menuOpen: $menuOpen)
+            MenuView(menuOpen: $menuOpen)
+        }.ignoresSafeArea(.all)
     }
 }
 

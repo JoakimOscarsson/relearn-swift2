@@ -18,10 +18,12 @@ struct mechanicsMenuView: View {
 }
 
 struct mechanicToggleRow: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var mechanic: Mechanic
+    let settings = Settings.shared
     var body: some View {
         Toggle(isOn: $mechanic.enabled) {Text(mechanic.name)}
-        #warning("Add code in .onChange() to trigger some method in settings to see if we need to change the max pool size!")
+#warning("Add code in .onChange() to trigger some method in settings to see if we need to change the max pool size!")
     }
 }
 

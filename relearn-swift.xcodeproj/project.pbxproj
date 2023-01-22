@@ -13,11 +13,11 @@
 		55316A6D2979D80000ACA952 /* FactionCardFront.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55316A6C2979D80000ACA952 /* FactionCardFront.swift */; };
 		55316A6F2979DCC100ACA952 /* FactionCardBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55316A6E2979DCC100ACA952 /* FactionCardBack.swift */; };
 		55316A712979DCF400ACA952 /* CardShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55316A702979DCF400ACA952 /* CardShape.swift */; };
+		55316A75297D203300ACA952 /* tmp.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 55316A74297D203300ACA952 /* tmp.rtf */; };
 		5558F2A52971D222007DFA31 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2A42971D222007DFA31 /* UserData.swift */; };
 		5558F2A92972BD43007DFA31 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2A82972BD43007DFA31 /* MainView.swift */; };
 		5558F2AD29733F83007DFA31 /* UIConsants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2AC29733F83007DFA31 /* UIConsants.swift */; };
 		5558F2AF297342D7007DFA31 /* CustomGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2AE297342D7007DFA31 /* CustomGridView.swift */; };
-		5558F2B129734675007DFA31 /* TeamAndFactionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2B029734675007DFA31 /* TeamAndFactionViews.swift */; };
 		5558F2B32973DF2C007DFA31 /* FetchRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2B22973DF2C007DFA31 /* FetchRequests.swift */; };
 		5558F2B52973F33F007DFA31 /* Mechanic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2B42973F33F007DFA31 /* Mechanic.swift */; };
 		5558F2B72973F376007DFA31 /* Faction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558F2B62973F376007DFA31 /* Faction.swift */; };
@@ -60,15 +60,15 @@
 /* Begin PBXFileReference section */
 		55316A662975DDE400ACA952 /* teamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teamView.swift; sourceTree = "<group>"; };
 		55316A68297755DC00ACA952 /* VolatileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VolatileData.swift; path = "relearn-swift/Models/VolatileData.swift"; sourceTree = SOURCE_ROOT; };
-		55316A6A2979CF7100ACA952 /* FactionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FactionDetails.swift; path = "relearn-swift/Views/Content/FactionDetails.swift"; sourceTree = "<group>"; };
-		55316A6C2979D80000ACA952 /* FactionCardFront.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FactionCardFront.swift; path = "relearn-swift/Views/Content/FactionCardFront.swift"; sourceTree = "<group>"; };
-		55316A6E2979DCC100ACA952 /* FactionCardBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FactionCardBack.swift; path = "relearn-swift/Views/Content/FactionCardBack.swift"; sourceTree = "<group>"; };
-		55316A702979DCF400ACA952 /* CardShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardShape.swift; path = "relearn-swift/Views/Content/CardShape.swift"; sourceTree = "<group>"; };
+		55316A6A2979CF7100ACA952 /* FactionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactionDetails.swift; sourceTree = "<group>"; };
+		55316A6C2979D80000ACA952 /* FactionCardFront.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactionCardFront.swift; sourceTree = "<group>"; };
+		55316A6E2979DCC100ACA952 /* FactionCardBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactionCardBack.swift; sourceTree = "<group>"; };
+		55316A702979DCF400ACA952 /* CardShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardShape.swift; sourceTree = "<group>"; };
+		55316A74297D203300ACA952 /* tmp.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = tmp.rtf; sourceTree = "<group>"; };
 		5558F2A42971D222007DFA31 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		5558F2A82972BD43007DFA31 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = SOURCE_ROOT; };
 		5558F2AC29733F83007DFA31 /* UIConsants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIConsants.swift; path = "relearn-swift/Views/UIConsants.swift"; sourceTree = SOURCE_ROOT; };
 		5558F2AE297342D7007DFA31 /* CustomGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGridView.swift; sourceTree = "<group>"; };
-		5558F2B029734675007DFA31 /* TeamAndFactionViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamAndFactionViews.swift; sourceTree = "<group>"; };
 		5558F2B22973DF2C007DFA31 /* FetchRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRequests.swift; sourceTree = "<group>"; };
 		5558F2B42973F33F007DFA31 /* Mechanic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mechanic.swift; sourceTree = "<group>"; };
 		5558F2B62973F376007DFA31 /* Faction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faction.swift; sourceTree = "<group>"; };
@@ -129,6 +129,7 @@
 				55F71065296B5C1000A16C61 /* relearn_swift.xcdatamodeld */,
 				55F7105E296B5C1000A16C61 /* Assets.xcassets */,
 				55F71092296D7B1B00A16C61 /* data.json */,
+				55316A74297D203300ACA952 /* tmp.rtf */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -147,11 +148,14 @@
 		5558F2BC29740DA6007DFA31 /* Content */ = {
 			isa = PBXGroup;
 			children = (
-				5558F2C629753771007DFA31 /* FactionCard.swift */,
 				5558F2B82973F75A007DFA31 /* ContentView.swift */,
-				5558F2B029734675007DFA31 /* TeamAndFactionViews.swift */,
-				55316A662975DDE400ACA952 /* teamView.swift */,
 				5558F2AE297342D7007DFA31 /* CustomGridView.swift */,
+				55316A662975DDE400ACA952 /* teamView.swift */,
+				5558F2C629753771007DFA31 /* FactionCard.swift */,
+				55316A702979DCF400ACA952 /* CardShape.swift */,
+				55316A6C2979D80000ACA952 /* FactionCardFront.swift */,
+				55316A6E2979DCC100ACA952 /* FactionCardBack.swift */,
+				55316A6A2979CF7100ACA952 /* FactionDetails.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -170,10 +174,6 @@
 		55F7104E296B5C0F00A16C61 = {
 			isa = PBXGroup;
 			children = (
-				55316A702979DCF400ACA952 /* CardShape.swift */,
-				55316A6E2979DCC100ACA952 /* FactionCardBack.swift */,
-				55316A6C2979D80000ACA952 /* FactionCardFront.swift */,
-				55316A6A2979CF7100ACA952 /* FactionDetails.swift */,
 				55F71059296B5C0F00A16C61 /* relearn-swift */,
 				55F7106F296B5C1000A16C61 /* relearn-swiftTests */,
 				55F71079296B5C1000A16C61 /* relearn-swiftUITests */,
@@ -345,6 +345,7 @@
 			files = (
 				55F71062296B5C1000A16C61 /* Preview Assets.xcassets in Resources */,
 				55F71093296D7B1B00A16C61 /* data.json in Resources */,
+				55316A75297D203300ACA952 /* tmp.rtf in Resources */,
 				55F7105F296B5C1000A16C61 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,7 +372,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				55316A712979DCF400ACA952 /* CardShape.swift in Sources */,
-				5558F2B129734675007DFA31 /* TeamAndFactionViews.swift in Sources */,
 				55F71097296F6D9400A16C61 /* StorePopulation.swift in Sources */,
 				55F71095296F667000A16C61 /* GameSet.swift in Sources */,
 				5558F2A52971D222007DFA31 /* UserData.swift in Sources */,

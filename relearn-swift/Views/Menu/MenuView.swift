@@ -54,8 +54,18 @@ struct MenuContentView: View {
         return settings.pickMethod != .pool ? .gray : .black
     }
 }
+struct LargeMenuView: View {
+    @Binding var menuOpen: Bool
+    var body: some View {
+        if menuOpen{
+            NavigationStack {
+                MenuContentView(menuOpen: $menuOpen)
+            }
+        }
+    }
+}
 
-struct MenuView: View {
+struct SideBarMenuView: View {
     @State private var offset: CGFloat = .zero
     @Binding var menuOpen: Bool
     let width: CGFloat
@@ -87,6 +97,19 @@ struct MenuView: View {
         }
     }
 }
+#warning("This warning should be elsewhere. The details view for factions is not closable on small screens!")
+struct MenuView: View {
+    @Binding var menuOpen: Bool
+    var body: some View {
+        GeometryReader(){ geometry in
+            if geometry.size.width < 700 {
+                LargeMenuView(menuOpen: $menuOpen)
+            } else {
+                SideBarMenuView(menuOpen: $menuOpen, width: 400)
+            }
+        }
+    }
+}
 
 struct numOfPlayersRow: View {
     @ObservedObject var settings = Settings.shared
@@ -95,7 +118,6 @@ struct numOfPlayersRow: View {
             Stepper("Number of Players: \(settings.players)",
                     value: $settings.players,
                     in: 2...4)
-#warning("On trying to pick teams: implement check to see if there are enought factions for specief number of players.")
         }
     }
 }
@@ -107,12 +129,11 @@ struct poolSizeRow: View {
     var body: some View {
         Stepper("Pool Size: \(settings.poolSize)",
                 value: $settings.poolSize,
-                in: minValue...factions.count)
-#warning("Implement change here if num of factions changes!")
+                in: minValue...factions.count/settings.players)
     }
     
     private var minValue: Int {
-        return (factions.count >= 3 ? 3 : 0)
+        return (factions.count/settings.players >= 3 ? 3 : 0)
     }
     
     func enableOnPool() -> some View {
